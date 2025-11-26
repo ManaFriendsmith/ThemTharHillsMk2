@@ -533,6 +533,45 @@ if mods["space-age"] then
             }
         })
     end
+
+    if mods["castra"] then
+        data:extend({
+            {
+                type = "recipe",
+                name = "integrated-circuit-battlefield-data",
+                category = "electronics",
+                icons = {
+                    {
+                        icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+                        icon_size = 64,
+                        scale = 0.7,
+                        shift = {0, -10}
+                    },
+                    {
+                        icon = "__castra__/graphics/icons/castra-data.png",
+                        icon_size = 64,
+                        scale = 0.5,
+                        shift = {-10, 10}
+                    }
+                },
+                ingredients = {
+                    {type="item", name="plastic-bar", amount=4},
+                    {type="fluid", name="sulfuric-acid", amount=10},
+                    {type="item", name="castra-data", amount=1},
+                },
+                results = {
+                    {type="item", name="integrated-circuit", amount=8},
+                    {type="fluid", name="depleted-acid", amount=10}
+                },
+                subgroup = "castra-processes",
+                order = "g",
+                main_product = "integrated-circuit",
+                energy_required = 1,
+                allow_productivity = true,
+                enabled = false
+            }
+        })
+    end
 end
 
 if tune_up_data then

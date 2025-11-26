@@ -70,3 +70,22 @@ if mods["Paracelsin"] then
     data.raw.recipe["nitrogen-nitric-acid"].icon = nil
     data.raw.recipe["nitrogen-nitric-acid"].icon_size = nil
 end
+
+if mods["castra"] then
+    --this should theoretically provide enough gold for non-circuit needs as it really isn't very much and the planet already heavily favors imports over starting from scratch.
+    --recyclers allow recovering gold from circuits producted from battle data and foundries allow recovering more gold from depleted acid.
+    rm.AddIngredient("nickel-sulfide-reduction", "nitric-acid", 25)
+    rm.AddProduct("nickel-sulfide-reduction", "depleted-acid", 25)
+    rm.AddProduct("processing-unit-battlefield-data", "depleted-acid", 40)
+
+    if mods["BrassTacks"] then
+        rm.AddProduct("custom-ancient-military-wreckage-recycling", {type="item", name="transceiver", amount=1, probability=0.04})
+    end
+
+    tm.AddUnlock("planet-discovery-castra", "integrated-circuit-battlefield-data", "-processing-unit-battlefield-data")
+
+    if misc.difficulty > 1 then
+        rm.AddIngredient("combat-roboport", "stepper-motor", 25)
+        rm.AddIngredient("jammer-radar", "transceiver", 10)
+    end
+end

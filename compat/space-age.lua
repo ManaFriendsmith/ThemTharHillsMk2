@@ -86,6 +86,7 @@ if mods["LasingAround"] and misc.difficulty > 1 then
     rm.AddIngredient("bioluminaser", "heavy-cable", 1)
     rm.AddIngredient("electrolaser", "heavy-cable", 1)
     rm.AddIngredient("galvaser", "heavy-cable", 1)
+    rm.AddIngredient("milaser", "heavy-cable", 1)
 end
 
 if misc.difficulty == 3 and rm.GetIngredientCount("electromagnetic-science-pack", "electric-engine-unit") == 0 then
@@ -118,4 +119,8 @@ if misc.difficulty == 3 then
     rm.AddIngredient("fusion-generator", "semiboloid-stator", 100)
     rm.AddIngredient("fusion-reactor", "heavy-cable", 100)
     rm.AddIngredient("railgun-turret", "hydrocoptic-marzelvane", 5)
+
+    if settings.startup["planetfall-postgame-logistics"].value then
+        rm.AddIngredient("extradimensional-cargo-bay", "hydrocoptic-marzelvane", 20)
+    end
 end
