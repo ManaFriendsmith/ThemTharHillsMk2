@@ -22,18 +22,18 @@ end
 table.insert(data.raw["assembling-machine"]["chemical-plant"].crafting_categories, "chemistry-or-metallurgy")
 table.insert(data.raw["assembling-machine"]["foundry"].crafting_categories, "chemistry-or-metallurgy")
 
-if mods["BrimStuff"] then
+if mods["BrimStuffMk2"] then
     rm.ReplaceIngredientProportional("foundry", "electronic-circuit", "heavy-cable")    
 end
 
-if mods["IfNickel"] then
+if mods["IfNickelMk2"] then
     rm.AddProduct("copper-ore-from-malachite", "depleted-acid", 200)
 else
     rm.AddProduct("acid-neutralisation", "depleted-acid", 200)
 end
 tm.AddUnlock("calcite-processing", "depleted-acid-reprocessing-with-calcite")
 tm.AddUnlock("foundry", "molten-gold", "-casting-iron")
-if mods["BrassTacks"] then
+if mods["BrassTacksMk2"] then
     tm.AddUnlock("foundry", "casting-gold", "casting-brass")
 else
     tm.AddUnlock("foundry", "casting-gold", "casting-copper")
@@ -68,7 +68,7 @@ if misc.difficulty > 1 then
     rm.AddIngredient("lightning-collector", "heavy-cable", 5)
     rm.AddProduct("scrap-recycling", {type="item", name="heavy-cable", amount=1, probability=0.03})
 
-    if mods["LasingAround"] then
+    if mods["LasingAroundMk2"] then
         rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="integrated-circuit", amount=1, probability=0.7})
     end
 end
@@ -85,7 +85,7 @@ if misc.starting_planet == "fulgora" then
     tm.SetTechnologyTrigger("gold-electronics", "gold-wire", 5)
 end
 
-if mods["LasingAround"] and misc.difficulty > 1 then
+if mods["LasingAroundMk2"] and misc.difficulty > 1 then
     rm.AddIngredient("lavaser", "heavy-cable", 1)
     rm.AddIngredient("bioluminaser", "heavy-cable", 1)
     rm.AddIngredient("electrolaser", "heavy-cable", 1)

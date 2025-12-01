@@ -7,14 +7,14 @@ data:extend({
     {
         type = "item",
         name = "gold-ore",
-        icon = "__ThemTharHills__/graphics/icons/gold-ore.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/gold-ore.png",
         icon_size = 64,
         mipmap_count = 4,
         pictures = {
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/gold-ore.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/gold-ore-1.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/gold-ore-2.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/gold-ore-3.png", scale = 0.5, mipmap_count = 4 }
+          { size = 64, filename = "__ThemTharHillsMk2__/graphics/icons/gold-ore.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHillsMk2__/graphics/icons/gold-ore-1.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHillsMk2__/graphics/icons/gold-ore-2.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHillsMk2__/graphics/icons/gold-ore-3.png", scale = 0.5, mipmap_count = 4 }
         },
         subgroup = "raw-resource",
         order = "fc", -- f = copper
@@ -30,7 +30,7 @@ data:extend({
       {
         type = "fluid",
         name = "nitric-acid",
-        icon = "__ThemTharHills__/graphics/icons/nitric-acid.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/nitric-acid.png",
         icon_size = 64,
         subgroup = "fluid",
         order = "a[fluid]-b[oil]-g",
@@ -43,7 +43,7 @@ data:extend({
       {
         type = "fluid",
         name = "depleted-acid",
-        icon = "__ThemTharHills__/graphics/icons/depleted-acid.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/depleted-acid.png",
         icon_size = 64,
         subgroup = "fluid",
         order = "a[fluid]-b[oil]-h",
@@ -56,7 +56,7 @@ data:extend({
       {
         type = "item",
         name = "gold-powder",
-        icon = "__ThemTharHills__/graphics/icons/gold-powder.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/gold-powder.png",
         subgroup = "raw-resource",
         order = "fca",
         color_hint = { text = "G" },
@@ -71,7 +71,7 @@ data:extend({
       {
         type = "item",
         name = "gold-plate",
-        icon = "__ThemTharHills__/graphics/icons/gold-plate.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/gold-plate.png",
         subgroup = "raw-material",
         order = "a[smelting]-bd",
         color_hint = { text = "G" },
@@ -86,7 +86,7 @@ data:extend({
       {
         type = "item",
         name = "gold-wire",
-        icon = "__ThemTharHills__/graphics/icons/gold-wire.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/gold-wire.png",
         subgroup = "intermediate-product",
         order = "a[basic-intermediates]-ca",
         color_hint = { text = "G" },
@@ -100,7 +100,7 @@ data:extend({
       {
         type = "item",
         name = "integrated-circuit",
-        icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
         subgroup = "intermediate-product",
         order = "b[circuits]-d",
         color_hint = { text = "G" },
@@ -113,19 +113,19 @@ data:extend({
       }
 })
 
-if mods["LunarLandings"] and not mods["BrassTacks"] then
+if mods["LunarLandings"] and not mods["BrassTacksMk2"] then
   data:extend({
     {
         type = "item",
         name = "cheese-ore",
-        icon = "__ThemTharHills__/graphics/icons/cheese-ore.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/cheese-ore.png",
         icon_size = 64,
         mipmap_count = 4,
         pictures = {
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-1.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-2.png", scale = 0.5, mipmap_count = 4 },
-          { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-3.png", scale = 0.5, mipmap_count = 4 }
+          { size = 64, filename = "__ThemTharHillsMk2__/graphics/icons/cheese-ore.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHillsMk2__/graphics/icons/cheese-ore-1.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHillsMk2__/graphics/icons/cheese-ore-2.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHillsMk2__/graphics/icons/cheese-ore-3.png", scale = 0.5, mipmap_count = 4 }
         },
         subgroup = "raw-resource",
         order = "faq", -- f = copper
@@ -160,7 +160,7 @@ if mods["space-age"] then
         {
             type = "item",
             name = "neural-bioculture",
-            icon = "__ThemTharHills__/graphics/icons/neural-bioculture.png",
+            icon = "__ThemTharHillsMk2__/graphics/icons/neural-bioculture.png",
             subgroup = data.raw.item["stem-cells"] and "original-dint" or "agriculture-products",
             order = data.raw.item["stem-cells"] and "b" or "c[eggs]-c",
             color_hint = { text = "G" },
@@ -185,7 +185,7 @@ data:extend({
   {
     type = "item",
     name = "stepper-motor",
-    icon = "__ThemTharHills__/graphics/icons/stepper-motor.png",
+    icon = "__ThemTharHillsMk2__/graphics/icons/stepper-motor.png",
     subgroup = "intermediate-product",
     order = "b[circuits]-3",
     inventory_move_sound = item_sounds.inserter_inventory_move,
@@ -198,7 +198,7 @@ data:extend({
   {
     type = "item",
     name = "transceiver",
-    icon = "__ThemTharHills__/graphics/icons/transceiver.png",
+    icon = "__ThemTharHillsMk2__/graphics/icons/transceiver.png",
     subgroup = "intermediate-product",
     order = "b[circuits]-4",
     inventory_move_sound = item_sounds.rocket_control_inventory_move,
@@ -211,7 +211,7 @@ data:extend({
   {
     type = "item",
     name = "heavy-cable",
-    icon = "__ThemTharHills__/graphics/icons/heavy-cable.png",
+    icon = "__ThemTharHillsMk2__/graphics/icons/heavy-cable.png",
     subgroup = "intermediate-product",
     order = "b[circuits]-5",
     inventory_move_sound = item_sounds.wire_inventory_move,
@@ -231,7 +231,7 @@ data:extend({
   {
     type = "item",
     name = "semiboloid-stator",
-    icon = "__ThemTharHills__/graphics/icons/semiboloid-stator.png",
+    icon = "__ThemTharHillsMk2__/graphics/icons/semiboloid-stator.png",
     subgroup = "intermediate-product",
     order = "b[circuits]-25",
     inventory_move_sound = item_sounds.electric_small_inventory_move,
@@ -248,7 +248,7 @@ if mods["space-age"] then
     {
       type = "item",
       name = "hydrocoptic-marzelvane",
-      icon = "__ThemTharHills__/graphics/icons/hydrocoptic-marzelvane.png",
+      icon = "__ThemTharHillsMk2__/graphics/icons/hydrocoptic-marzelvane.png",
       subgroup = mods["maraxsis"] and "maraxsis-salt" or "aquilo-processes",
       order = mods["maraxsis"] and "ga" or "c[lithium]-b2",
       inventory_move_sound = item_sounds.fluid_inventory_move,

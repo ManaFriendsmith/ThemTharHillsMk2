@@ -3,7 +3,7 @@ local tm = require("__pf-functions__/technology-manipulation")
 local misc = require("__pf-functions__/misc")
 
 if mods["se-space-trains"] then
-    if misc.difficulty == 3 and not mods["IfNickel"] then
+    if misc.difficulty == 3 and not mods["IfNickelMk2"] then
         rm.AddIngredient("space-locomotive", "semiboloid-stator", 30)
         rm.AddIngredient("space-cargo-wagon", "semiboloid-stator", 30)
         rm.AddIngredient("space-fluid-wagon", "semiboloid-stator", 30)

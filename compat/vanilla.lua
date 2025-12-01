@@ -39,10 +39,10 @@ if misc.difficulty > 1 then
     if mods["space-age"] then
         rm.AddIngredient("rocket-control-unit", "transceiver", 1)
         rm.RemoveIngredient("rocket-control-unit", "electronic-circuit", 99999)
-        if mods["LasingAround"] or not mods["BrassTacks"] then
+        if mods["LasingAroundMk2"] or not mods["BrassTacksMk2"] then
             rm.AddIngredient("rocket-control-unit", "integrated-circuit", 5)
         end
-    elseif not (mods["LasingAround"] and mods["BrassTacks"]) then
+    elseif not (mods["LasingAroundMk2"] and mods["BrassTacksMk2"]) then
         rm.AddIngredient("rocket-part", "transceiver", 10)
     end
 end
@@ -55,7 +55,7 @@ if misc.difficulty > 1 and mods["LunarLandings"] then
     rm.ReplaceIngredientProportional("rocket-control-unit", "advanced-circuit", "transceiver", 1, 1)
 end
 
-if mods["LasingAround"] then
+if mods["LasingAroundMk2"] then
     if misc.difficulty > 1 then
         rm.AddIngredient("laser", "heavy-cable", 1)
         rm.ReplaceIngredientProportional("scanner", "electronic-circuit", "integrated-circuit")
@@ -69,12 +69,12 @@ if mods["LasingAround"] then
 end
 
 
-if misc.difficulty == 2 and mods["IfNickel"] then
+if misc.difficulty == 2 and mods["IfNickelMk2"] then
     --difficulty 3 coil is too early game for gold
     rm.ReplaceIngredientProportional("electromagnetic-coil", "copper-cable", "gold-wire")
 end
 
-if misc.difficulty == 3 and mods["IfNickel"] then
+if misc.difficulty == 3 and mods["IfNickelMk2"] then
     rm.ReplaceIngredientProportional("grabber", "iron-gear-wheel", "stepper-motor", 0.66, 3)
 end
 
@@ -113,7 +113,7 @@ else
     rm.ReplaceIngredientProportional("train-stop", "electronic-circuit", "transceiver", 0.3333)
 end
 
-if mods["BrassTacks"] and misc.difficulty == 3 then
+if mods["BrassTacksMk2"] and misc.difficulty == 3 then
     rm.ReplaceIngredientProportional("rail-signal", "galvanized-panel", "gold-wire", 1, 1)
     rm.ReplaceIngredientProportional("rail-chain-signal", "galvanized-panel", "gold-wire", 1, 1)
 else
@@ -147,7 +147,7 @@ if misc.difficulty > 1 then
     rm.ReplaceIngredientProportional("buffer-chest", "electronic-circuit", "transceiver", 0.33)
     rm.ReplaceIngredientProportional("requester-chest", "electronic-circuit", "transceiver", 0.33)
 
-    if not mods["BrassTacks"] then
+    if not mods["BrassTacksMk2"] then
         rm.AddIngredient("logistic-robot", "stepper-motor", 2)
         rm.AddIngredient("construction-robot", "stepper-motor", 2)
     end    
@@ -162,7 +162,7 @@ if misc.difficulty > 1 and rm.GetIngredientCount("assembling-machine-3", "electr
     rm.AddIngredient("assembling-machine-3", "electric-engine-unit", 2)
 end
 
-if misc.difficulty > 1 and not mods["BrassTacks"] then
+if misc.difficulty > 1 and not mods["BrassTacksMk2"] then
     rm.AddIngredient("assembling-machine-3", "stepper-motor", 10)
 end
 
@@ -177,7 +177,7 @@ else
     rm.AddIngredient("electric-furnace", "heavy-cable", 5)
 end
 
-if mods["LasingAround"] and misc.difficulty > 1 then
+if mods["LasingAroundMk2"] and misc.difficulty > 1 then
     rm.AddIngredient("laser-mill", "stepper-motor", 20)
     if mods["LunarLandings"] and not mods["space-age"] then
         rm.RemoveIngredient("laser-mill", "cooling-fan", 10)
@@ -212,7 +212,7 @@ end
 if misc.difficulty > 1 then
     rm.AddIngredient("steam-turbine", "heavy-cable", 20)
     if misc.difficulty == 3 then
-        if mods["BrassTacks"] or mods["IfNickel"] then
+        if mods["BrassTacksMk2"] or mods["IfNickelMk2"] then
             --Too many ingredients.
             rm.ReplaceIngredientProportional("steam-turbine", "copper-plate", "semiboloid-stator", 0.5)
             rm.RemoveIngredient("steam-turbine", "iron-gear-wheel", 99999)
@@ -259,7 +259,7 @@ end
 
 --TURRETS
 if misc.difficulty > 1 then
-    if not mods["IfNickel"] then
+    if not mods["IfNickelMk2"] then
         rm.AddIngredient("laser-turret", "stepper-motor", 1)
     end
 end

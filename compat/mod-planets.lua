@@ -148,7 +148,7 @@ if mods["castra"] then
     rm.AddProduct("nickel-sulfide-reduction", "depleted-acid", 25)
     rm.AddProduct("processing-unit-battlefield-data", "depleted-acid", 40)
 
-    if mods["BrassTacks"] then
+    if mods["BrassTacksMk2"] then
         rm.AddProduct("custom-ancient-military-wreckage-recycling", {type="item", name="transceiver", amount=1, probability=0.04})
     end
 

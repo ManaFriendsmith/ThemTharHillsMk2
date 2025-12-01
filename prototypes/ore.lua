@@ -7,7 +7,7 @@ data:extend({
   {
     type = "resource",
     name = "gold-ore",
-    icon = "__ThemTharHills__/graphics/icons/gold-ore.png",
+    icon = "__ThemTharHillsMk2__/graphics/icons/gold-ore.png",
     icon_size = 64,
     icon_mipmaps = 4,
     flags = {"placeable-neutral"},
@@ -39,7 +39,7 @@ data:extend({
     stages =
     {
       sheet = {
-        filename = "__ThemTharHills__/graphics/entity/gold-ore.png",
+        filename = "__ThemTharHillsMk2__/graphics/entity/gold-ore.png",
         priority = "extra-high",
         size = 128,
         frame_count = 8,
@@ -61,7 +61,7 @@ data:extend({
   }
 })
 
-if mods["LunarLandings"] and not mods["BrassTacks"] then
+if mods["LunarLandings"] and not mods["BrassTacksMk2"] then
   local cheese_sim = table.deepcopy(data.raw.resource["iron-ore"].factoriopedia_simulation)
   cheese_sim.init = string.gsub(cheese_sim.init, "iron", "cheese")
 
@@ -69,7 +69,7 @@ if mods["LunarLandings"] and not mods["BrassTacks"] then
     {
       type = "resource",
       name = "cheese-ore",
-      icon = "__ThemTharHills__/graphics/icons/cheese-ore.png",
+      icon = "__ThemTharHillsMk2__/graphics/icons/cheese-ore.png",
       icon_size = 64,
       icon_mipmaps = 4,
       flags = {"placeable-neutral"},
@@ -100,7 +100,7 @@ if mods["LunarLandings"] and not mods["BrassTacks"] then
       {
         sheet =
         {
-          filename = "__ThemTharHills__/graphics/entity/cheese-ore.png",
+          filename = "__ThemTharHillsMk2__/graphics/entity/cheese-ore.png",
           priority = "extra-high",
           size = 128,
           frame_count = 8,

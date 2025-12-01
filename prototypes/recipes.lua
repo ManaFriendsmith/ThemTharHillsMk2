@@ -33,7 +33,7 @@ data:extend({
         type = "recipe",
         name = "depleted-acid-reprocessing",
         category = mods["space-age"] and "chemistry-or-cryogenics" or "chemistry",
-        icon = "__ThemTharHills__/graphics/icons/depleted-acid.png",
+        icon = "__ThemTharHillsMk2__/graphics/icons/depleted-acid.png",
         icon_size = 64,
         subgroup = "fluid-recipes",
         order = "c[oil-products]-d",
@@ -83,7 +83,7 @@ data:extend({
         category = mods["space-age"] and "chemistry-or-metallurgy" or "chemistry",
         icons = {
             {
-              icon = "__ThemTharHills__/graphics/icons/gold-powder.png",
+              icon = "__ThemTharHillsMk2__/graphics/icons/gold-powder.png",
               icon_size = 64
             },
             {
@@ -167,7 +167,7 @@ data:extend({
 })
 
 if mods["LunarLandings"] then
-    if mods["BrassTacks"] then
+    if mods["BrassTacksMk2"] then
         rm.RemoveProduct("cheese-ore-processing", "zinc-ore", 5)
         rm.AddProduct("cheese-ore-processing", "gold-ore", 5)
     else
@@ -178,7 +178,7 @@ if mods["LunarLandings"] then
                 category = "ll-electric-smelting",
                 subgroup = "ll-raw-material-moon",
                 order = "a[moon-rock]-d",
-                icon = "__BrassTacks__/graphics/icons/cheese-ore.png",
+                icon = "__BrassTacksMk2__/graphics/icons/cheese-ore.png",
                 icon_size = 64,
                 energy_required = 10,
                 ingredients = {
@@ -227,7 +227,7 @@ if mods["LunarLandings"] then
         category = "chemistry",
         icons = {
             {
-                icon = "__ThemTharHills__/graphics/icons/depleted-acid.png",
+                icon = "__ThemTharHillsMk2__/graphics/icons/depleted-acid.png",
                 icon_size = 64
             },
             {
@@ -322,7 +322,7 @@ if mods["space-age"] then
                             icon_size = 64
                           },
                           {
-                            icon = "__ThemTharHills__/graphics/icons/gold-plate.png",
+                            icon = "__ThemTharHillsMk2__/graphics/icons/gold-plate.png",
                             icon_size = 64
                           },
                           {
@@ -360,11 +360,11 @@ if mods["space-age"] then
             category = "electronics",
             icons = {
                 {
-                    icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+                    icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
                     icon_size = 64
                 },
                 {
-                    icon = "__ThemTharHills__/graphics/icons/neural-bioculture.png",
+                    icon = "__ThemTharHillsMk2__/graphics/icons/neural-bioculture.png",
                     icon_size = 64,
                     scale = 0.25,
                     shift = {8, 8}
@@ -395,7 +395,7 @@ if mods["space-age"] then
                     icon_mipmaps = 4
                 },
                 {
-                    icon = "__ThemTharHills__/graphics/icons/neural-bioculture.png",
+                    icon = "__ThemTharHillsMk2__/graphics/icons/neural-bioculture.png",
                     icon_size = 64,
                     scale = 0.25,
                     shift = {8, 8}
@@ -496,7 +496,7 @@ if mods["space-age"] then
             subgroup = "fluid-recipes",
             icons = {
                 {
-                    icon = "__ThemTharHills__/graphics/icons/depleted-acid.png",
+                    icon = "__ThemTharHillsMk2__/graphics/icons/depleted-acid.png",
                     icon_size = 64,        
                 },
                 {
@@ -533,7 +533,7 @@ if mods["space-age"] then
             category = data.raw["recipe-category"]["electroplating"] and "electroplating" or "electromagnetics",
             icons = {
                 {
-                    icon = "__ThemTharHills__/graphics/icons/gold-wire.png",
+                    icon = "__ThemTharHillsMk2__/graphics/icons/gold-wire.png",
                     icon_size = 64,        
                 },
                 {
@@ -561,7 +561,7 @@ if mods["space-age"] then
             category = "electromagnetics",
             icons = {
                 {
-                    icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+                    icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
                     icon_size = 64,        
                 },
                 {
@@ -599,7 +599,7 @@ if mods["space-age"] then
                 additional_categories = {"electromagnetics"},
                 icons = {
                     {
-                        icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+                        icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
                         icon_size = 64
                     },
                     {
@@ -638,7 +638,7 @@ if mods["space-age"] then
                 category = "electronics",
                 icons = {
                     {
-                        icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+                        icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
                         icon_size = 64,
                         scale = 0.7,
                         shift = {0, -10}
@@ -748,7 +748,7 @@ if tune_up_data then
     category = "tuning-up",
     count = 1,
     energy_required = 1,
-    ingredients = {{{"semiboloid-stator", 4}, {mods["maraxsis"] and "maraxsis-glass-panes" or "fluoroketone-cold", mods["maraxsis"] and 1 or 20}, {mods["BrassTacks"] and "bearing" or "iron-gear-wheel", 2}}}
+    ingredients = {{{"semiboloid-stator", 4}, {mods["maraxsis"] and "maraxsis-glass-panes" or "fluoroketone-cold", mods["maraxsis"] and 1 or 20}, {mods["BrassTacksMk2"] and "bearing" or "iron-gear-wheel", 2}}}
   }
 end
 
@@ -819,7 +819,7 @@ if mods["LunarLandings"] then
         localised_name = { "recipe-name.entangled-transceiver" },
         icons = {
             {
-            icon = "__ThemTharHills__/graphics/icons/transceiver.png",
+            icon = "__ThemTharHillsMk2__/graphics/icons/transceiver.png",
             icon_size = 64
             },
             {

@@ -1,12 +1,12 @@
 local misc = require("__pf-functions__/misc")
 local tm = require("__pf-functions__/technology-manipulation")
 
-if mods["LunarLandings"] and not mods["BrassTacks"] then
+if mods["LunarLandings"] and not mods["BrassTacksMk2"] then
     data:extend({
         {
             type = "technology",
             name = "lunar-cheese-exploitation",
-            icon = "__BrassTacks__/graphics/technology/lunar-cheese-exploitation.png",
+            icon = "__BrassTacksMk2__/graphics/technology/lunar-cheese-exploitation.png",
             icon_size = 64,
             effects = {
                 {
@@ -33,7 +33,7 @@ data:extend({
     {
         type = "technology",
         name = "gold-processing",
-        icon = "__ThemTharHills__/graphics/technology/gold-processing.png",
+        icon = "__ThemTharHillsMk2__/graphics/technology/gold-processing.png",
         icon_size = 256,
         effects = {
             {
@@ -121,7 +121,7 @@ if misc.difficulty > 1 then
         {
             type = "technology",
             name = "gold-electronics",
-            icon = "__ThemTharHills__/graphics/technology/gold-electronics.png",
+            icon = "__ThemTharHillsMk2__/graphics/technology/gold-electronics.png",
             icon_size = 256,
             effects = {
                 {
@@ -157,7 +157,7 @@ if mods["space-age"] then
         {
             type = "technology",
             name = "neural-electronics",
-            icon = "__ThemTharHills__/graphics/technology/neural-electronics.png",
+            icon = "__ThemTharHillsMk2__/graphics/technology/neural-electronics.png",
             icon_size = 256,
             effects = {
                 {
@@ -189,7 +189,7 @@ if mods["LunarLandings"] and misc.difficulty > 1 then
             name = "entangled-communications",
             icons = {
                 {
-                icon = "__ThemTharHills__/graphics/technology/gold-electronics.png",
+                icon = "__ThemTharHillsMk2__/graphics/technology/gold-electronics.png",
                 icon_size = 256
                 },
                 {
