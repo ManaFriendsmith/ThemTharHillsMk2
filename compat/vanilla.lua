@@ -36,7 +36,7 @@ if misc.difficulty > 1 then
 end
 
 if misc.difficulty > 1 then
-    if data.raw.item["rocket-control-unit"] then
+    if mods["space-age"] then
         rm.AddIngredient("rocket-control-unit", "transceiver", 1)
         rm.RemoveIngredient("rocket-control-unit", "electronic-circuit", 99999)
         if mods["LasingAround"] or not mods["BrassTacks"] then
@@ -45,10 +45,14 @@ if misc.difficulty > 1 then
     elseif not (mods["LasingAround"] and mods["BrassTacks"]) then
         rm.AddIngredient("rocket-part", "transceiver", 10)
     end
+end
 
-    if not mods["space-age"] then
-        rm.AddIngredient("satellite", "transceiver", 50)
-    end
+if not mods["space-age"] then
+    rm.AddIngredient("satellite", "transceiver", 50)
+end
+
+if misc.difficulty > 1 and mods["LunarLandings"] then
+    rm.ReplaceIngredientProportional("rocket-control-unit", "advanced-circuit", "transceiver", 1, 1)
 end
 
 if mods["LasingAround"] then
@@ -59,7 +63,7 @@ if mods["LasingAround"] then
         rm.AddIngredient("laser", "gold-wire", 5)
     end
 
-    if misc.difficulty == 3 and not mods["space-age"] then
+    if misc.difficulty == 3 and not mods["space-age"] and not mods["LunarLandings"] then
         tm.AddPrerequisite("processing-unit", "laser-mill")
     end
 end
@@ -147,6 +151,7 @@ if misc.difficulty > 1 then
         rm.AddIngredient("logistic-robot", "stepper-motor", 2)
         rm.AddIngredient("construction-robot", "stepper-motor", 2)
     end    
+    tm.AddUnlock("ll-quantum-resource-processing", "astral-acid-recovery")
 end
 
 --PRODUCTION
@@ -170,6 +175,13 @@ if misc.difficulty == 2 and mods["space-age"] then
     rm.ReplaceIngredientProportional("electric-furnace", "advanced-circuit", "heavy-cable", 1)
 else
     rm.AddIngredient("electric-furnace", "heavy-cable", 5)
+end
+
+if mods["LasingAround"] and misc.difficulty > 1 then
+    rm.AddIngredient("laser-mill", "stepper-motor", 20)
+    if mods["LunarLandings"] and not mods["space-age"] then
+        rm.RemoveIngredient("laser-mill", "cooling-fan", 10)
+    end
 end
 
 --GENERATORS

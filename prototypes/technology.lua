@@ -1,6 +1,34 @@
 local misc = require("__pf-functions__/misc")
 local tm = require("__pf-functions__/technology-manipulation")
 
+if mods["LunarLandings"] and not mods["BrassTacks"] then
+    data:extend({
+        {
+            type = "technology",
+            name = "lunar-cheese-exploitation",
+            icon = "__BrassTacks__/graphics/technology/lunar-cheese-exploitation.png",
+            icon_size = 64,
+            effects = {
+                {
+                    type = "unlock-recipe",
+                    recipe = "cheese-ore-processing"
+                }
+            },
+            prerequisites = {"production-science-pack"},
+            unit = {
+                count = 300,
+                time = 15,
+                ingredients = {
+                    {"automation-science-pack", 1},
+                    {"logistic-science-pack", 1},
+                    {"chemical-science-pack", 1},
+                    {"production-science-pack", 1}
+                }
+            }
+        }
+    })
+end
+
 data:extend({
     {
         type = "technology",
@@ -149,6 +177,89 @@ if mods["space-age"] then
             research_trigger = {
                 type = "craft-item",
                 item = "pentapod-egg"
+            }
+        }
+    })
+end
+
+if mods["LunarLandings"] and misc.difficulty > 1 then
+    data:extend({
+        {
+            type = "technology",
+            name = "entangled-communications",
+            icons = {
+                {
+                icon = "__ThemTharHills__/graphics/technology/gold-electronics.png",
+                icon_size = 256
+                },
+                {
+                icon = "__LunarLandings__/graphics/icons/polariton/polariton.png",
+                icon_size = 64,
+                shift = {-64, -64},
+                scale = 1
+                }
+            },
+            effects =
+            {
+                {
+                type = "unlock-recipe",
+                recipe = "entangled-transceiver"
+                }
+            },
+            prerequisites = {"ll-quantum-resonation"},
+            unit = {
+                count = 500,
+                ingredients = {
+                    { "automation-science-pack", 1 },
+                    { "logistic-science-pack", 1 },
+                    { "chemical-science-pack", 1 },
+                    { "production-science-pack", 1 },
+                    { "utility-science-pack", 1 },
+                    { "ll-space-science-pack", 1 }
+                },
+                time = 60,
+            }
+        }
+    })
+end
+
+if mods["LunarLandings"] and mods["space-age"] then
+    data:extend({
+        {
+            type = "technology",
+            name = "vulcanus-silica",
+            icons = {
+                {
+                icon = "__space-age__/graphics/technology/foundry.png",
+                icon_size = 256
+                },
+                {
+                icon = "__LunarLandings__/graphics/icons/silica.png",
+                icon_size = 64,
+                shift = {-64, -64},
+                scale = 1
+                }
+            },
+            effects =
+            {
+                {
+                type = "unlock-recipe",
+                recipe = "vulcanus-silica"
+                }
+            },
+            prerequisites = {"metallurgic-science-pack", "ll-space-science-pack"},
+            unit = {
+                count = 1000,
+                ingredients = {
+                    { "automation-science-pack", 1 },
+                    { "logistic-science-pack", 1 },
+                    { "chemical-science-pack", 1 },
+                    { "space-science-pack", 1 },
+                    { "production-science-pack", 1 },
+                    { "metallurgic-science-pack", 1 },
+                    { "ll-space-science-pack", 1 }
+                },
+                time = 60,
             }
         }
     })

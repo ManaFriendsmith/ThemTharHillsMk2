@@ -113,6 +113,33 @@ data:extend({
       }
 })
 
+if mods["LunarLandings"] and not mods["BrassTacks"] then
+  data:extend({
+    {
+        type = "item",
+        name = "cheese-ore",
+        icon = "__ThemTharHills__/graphics/icons/cheese-ore.png",
+        icon_size = 64,
+        mipmap_count = 4,
+        pictures = {
+          { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-1.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-2.png", scale = 0.5, mipmap_count = 4 },
+          { size = 64, filename = "__ThemTharHills__/graphics/icons/cheese-ore-3.png", scale = 0.5, mipmap_count = 4 }
+        },
+        subgroup = "raw-resource",
+        order = "faq", -- f = copper
+        color_hint = { text = "C" },
+        inventory_move_sound = item_sounds.resource_inventory_move,
+        pick_sound = item_sounds.resource_inventory_pickup,
+        drop_sound = item_sounds.resource_inventory_move,
+        stack_size = 50,
+        canonical_cost = 1,
+        weight = 2*kg
+      }
+  })
+end
+
 if mods["space-age"] then
     space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
     data:extend({

@@ -55,13 +55,16 @@ data:extend({
     type = "autoplace-control",
     category = "resource",
     name = "gold-ore",
-    localised_name = {"", (mods["LunarLandings"] and "[virtual-signal=ll-nauvis] " or "") .. "[entity=gold-ore] ", {"entity-name.gold-ore"}},
+    localised_name = {"", "[entity=gold-ore] ", {"entity-name.gold-ore"}},
     richness = true,
     order = "a-ec"
   }
 })
 
 if mods["LunarLandings"] and not mods["BrassTacks"] then
+  local cheese_sim = table.deepcopy(data.raw.resource["iron-ore"].factoriopedia_simulation)
+  cheese_sim.init = string.gsub(cheese_sim.init, "iron", "cheese")
+
   data:extend({
     {
       type = "resource",
@@ -75,7 +78,7 @@ if mods["LunarLandings"] and not mods["BrassTacks"] then
       tree_removal_max_distance = 32 * 32,
       minable =
       {
-        mining_particle = "gold-ore-particle",
+        mining_particle = "zinc-particle",
         mining_time = 1,
         result = "cheese-ore"
       },
@@ -86,11 +89,11 @@ if mods["LunarLandings"] and not mods["BrassTacks"] then
       {
         name = "cheese-ore",
         order = "a-b-e",
-        base_density = 3,
+        base_density = 4,
         has_starting_area_placement = false,
         regular_rq_factor_multiplier = 1.0,
         starting_rq_factor_multiplier = 1.1,
-        candidate_spot_count = 22
+        candidate_spot_count = 16
       },
       stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
       stages =
@@ -106,19 +109,24 @@ if mods["LunarLandings"] and not mods["BrassTacks"] then
         }
       },
       map_color = {1, 0.8, 0},
-      mining_visualisation_tint = {1, 0.9, 0}
+      mining_visualisation_tint = {1, 0.9, 0},
+      factoriopedia_simulation = cheese_sim
     },
     {
       type = "autoplace-control",
       category = "resource",
       name = "cheese-ore",
-      localised_name = {"", "[virtual-signal=ll-luna] [entity=cheese-ore] ", {"entity-name.cheese-ore"}},
+      localised_name = {"", "[entity=cheese-ore] ", {"entity-name.cheese-ore"}},
       richness = true,
       order = "d-ca"
     }
   })
-  data.raw.resource["cheese-ore"].autoplace.default_enabled = false
+
+    data.raw.resource["cheese-ore"].autoplace.default_enabled = false
   data.raw.resource["cheese-ore"].autoplace.tile_restriction = {"ll-luna-plain"}
+
+  data.raw.planet["luna"].map_gen_settings.autoplace_controls["cheese-ore"] = {}
+  data.raw.planet["luna"].map_gen_settings.autoplace_settings.entity.settings["cheese-ore"] = {}
 end
 
 data.raw.planet["nauvis"].map_gen_settings.autoplace_controls["gold-ore"] = {}

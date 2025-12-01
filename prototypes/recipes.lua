@@ -33,9 +33,9 @@ data:extend({
         type = "recipe",
         name = "depleted-acid-reprocessing",
         category = mods["space-age"] and "chemistry-or-cryogenics" or "chemistry",
-        subgroup = "fluid-recipes",
         icon = "__ThemTharHills__/graphics/icons/depleted-acid.png",
         icon_size = 64,
+        subgroup = "fluid-recipes",
         order = "c[oil-products]-d",
         ingredients = {
             {type="fluid", name="depleted-acid", amount=150},
@@ -158,13 +158,109 @@ data:extend({
             {type="fluid", name="depleted-acid", amount=1}
         },
         main_product = "integrated-circuit",
-        lasermill_vanilla = {helium = misc.difficulty == 3 and -0.4 or -1, convert = misc.difficulty == 3, unlock="processing-unit"},
+        lasermill_vanilla = {helium = misc.difficulty == 3 and -0.4 or -1, convert = (misc.difficulty == 3 and not mods["LunarLandings"]), unlock="processing-unit"},
         lasermill_dlc = {helium = -1},
         energy_required = 1,
         allow_productivity = true,
         enabled = false
     }
 })
+
+if mods["LunarLandings"] then
+    if mods["BrassTacks"] then
+        rm.RemoveProduct("cheese-ore-processing", "zinc-ore", 5)
+        rm.AddProduct("cheese-ore-processing", "gold-ore", 5)
+    else
+        data:extend({
+            {
+                type = "recipe",
+                name = "cheese-ore-processing",
+                category = "ll-electric-smelting",
+                subgroup = "ll-raw-material-moon",
+                order = "a[moon-rock]-d",
+                icon = "__BrassTacks__/graphics/icons/cheese-ore.png",
+                icon_size = 64,
+                energy_required = 10,
+                ingredients = {
+                    {type="item", name="cheese-ore", amount=20}
+                },
+                results = {
+                    {type="item", name="gold-ore", amount=10},
+                    {type="item", name="ll-moon-rock", amount=3},
+                    {type="fluid", name="light-oil", amount=10, fluidbox_index = 1}
+                },
+                always_show_products = true,
+                enabled = false
+            }
+        })
+    end
+    if mods["space-age"] then
+        data:extend({
+            {
+                type = "recipe",
+                name = "vulcanus-silica",
+                category = "metallurgy",
+                subgroup = "ll-raw-material-moon",
+                order = "a[silica]-b",
+                icon = "__LunarLandings__/graphics/icons/silica.png",
+                icon_size = 64,
+                energy_required = 5,
+                ingredients = {
+                    {type="item", name="stone", amount=20},
+                    {type="item", name="calcite", amount=2},
+                    {type="fluid", name="lava", amount=100}
+                },
+                results = {
+                    {type="item", name="ll-silica", amount=1}
+                },
+                enabled = false
+            }
+        })
+    end
+end
+
+if mods["LunarLandings"] then
+    data:extend({
+        {
+        type = "recipe",
+        name = "astral-acid-recovery",
+        category = "chemistry",
+        icons = {
+            {
+                icon = "__ThemTharHills__/graphics/icons/depleted-acid.png",
+                icon_size = 64
+            },
+            {
+                icon = "__LunarLandings__/graphics/fluid/astroflux.png",
+                icon_size = 64,
+                icon_mipmaps = 4,
+                scale = 0.33
+            }
+        },
+        icon_size = 64,
+        subgroup = "fluid-recipes",
+        order = "c[oil-products]-da",
+        energy_required = 10,
+        allow_decomposition = false,
+        allow_productivity = true,
+        ingredients = {
+            {type="fluid", name="depleted-acid", amount=600},
+            {type="fluid", name="ll-astroflux", amount=1}
+        },
+        results = {
+            {type="fluid", name="sulfuric-acid", amount=15},
+            {type="item", name="copper-ore", amount=1}
+        },
+        crafting_machine_tint = {
+            primary = {0, 1, 1, 1},
+            secondary = {0.5, 0, 1, 1},
+            tertiary = {0, 1, 1, 1},
+            quaternary = {0.3, 0, 0.75, 1}
+        },
+        enabled = false
+        }
+    })
+end
 
 if mods["space-age"] then
     if data.raw.item["stem-cells"] then
@@ -652,7 +748,7 @@ if tune_up_data then
     category = "tuning-up",
     count = 1,
     energy_required = 1,
-    ingredients = {{{"semiboloid-stator", 4}, {mods["maraxsis"] and "maraxsis-glass" or "fluoroketone-cold", mods["maraxsis"] and 1 or 20}, {mods["BrassTacks"] and "bearing" or "iron-gear-wheel", 2}}}
+    ingredients = {{{"semiboloid-stator", 4}, {mods["maraxsis"] and "maraxsis-glass-panes" or "fluoroketone-cold", mods["maraxsis"] and 1 or 20}, {mods["BrassTacks"] and "bearing" or "iron-gear-wheel", 2}}}
   }
 end
 
@@ -713,6 +809,42 @@ data:extend({
         enabled = false
     }
 })
+
+if mods["LunarLandings"] then
+    data:extend({
+        {
+        type = "recipe",
+        name = "entangled-transceiver",
+        category = "ll-quantum-resonating",
+        localised_name = { "recipe-name.entangled-transceiver" },
+        icons = {
+            {
+            icon = "__ThemTharHills__/graphics/icons/transceiver.png",
+            icon_size = 64
+            },
+            {
+            icon = "__LunarLandings__/graphics/icons/polariton/polariton.png",
+            icon_size = 64,
+            scale = 0.25,
+            shift = {-8, -8}
+            }
+        },
+        energy_required = 20,
+        allow_decomposition = false,
+        ingredients = {
+            {type="item", name="integrated-circuit", amount=40},
+            {type="item", name="ll-down-polariton", amount=1},
+            {type="item", name="ll-left-polariton", amount=1}
+        },
+        results = {
+            {type="item", name="transceiver", amount=40},
+            {type="item", name="ll-up-polariton", amount=2}
+        },
+        main_product = "transceiver",
+        enabled = false
+        }
+    })
+end
 
 if misc.difficulty == 2 then
     return

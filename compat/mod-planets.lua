@@ -2,6 +2,76 @@ local rm = require("__pf-functions__/recipe-manipulation")
 local tm = require("__pf-functions__/technology-manipulation")
 local misc = require("__pf-functions__/misc")
 
+if mods["LunarLandings"] then
+    local fbs = data.raw["assembling-machine"]["ll-low-grav-assembling-machine"].fluid_boxes
+    if #fbs == 1 then
+        local orifice = table.deepcopy(fbs[1])
+        orifice.production_type = "output"
+        orifice.pipe_connections[1] = {
+            flow_direction="output",
+            direction = defines.direction.south,
+            position = {0, 2}
+        }
+        fbs[2] = orifice
+    end
+
+    local llrcu = mods["space-age"] and "ll-rocket-control-unit" or "rocket-control-unit"
+    if misc.difficulty > 1 then
+        rm.AddIngredient(llrcu, "transceiver", 1)
+        rm.RemoveIngredient(llrcu, "electronic-circuit", 99999)
+    end
+
+    rm.AddProduct(llrcu, "depleted-acid", 3)
+
+    rm.RemoveIngredient("processing-unit", "ll-silicon", 5)
+    rm.ReplaceIngredientProportional("integrated-circuit", "copper-plate", "ll-silicon", 0.5)
+
+    data.raw.recipe["integrated-circuit"].category = "advanced-circuit-crafting"
+    rm.AddRecipeCategory("semiboloid-stator", "circuit-crafting")
+    rm.AddRecipeCategory("stepper-motor", "circuit-crafting")
+    rm.AddRecipeCategory("gold-wire", "circuit-crafting")
+    rm.AddRecipeCategory("transceiver", "circuit-crafting")
+    rm.AddRecipeCategory("heavy-cable", "circuit-crafting")
+
+    --stepper motors require fewer imports to make on luna than red circuits do so this is sort of a buff on diff 2
+    --in particular they need a lot of gold and no plastic so oil byproduct will be produced to help feed integrated circuits
+    if misc.difficulty == 3 then
+        rm.AddIngredient("ll-low-grav-assembling-machine", "stepper-motor", 10)
+    elseif misc.difficulty == 2 then
+        rm.ReplaceIngredientProportional("ll-low-grav-assembling-machine", "advanced-circuit", "stepper-motor")
+    end
+
+    if misc.difficulty > 1 then
+        rm.AddIngredient("ll-arc-furnace", "heavy-cable", 10)
+
+        if not data.raw.item["grabber"] then
+            rm.AddIngredient("ll-ion-logistic-robot", "stepper-motor", 2)
+            rm.AddIngredient("ll-ion-construction-robot", "stepper-motor", 2)
+        end
+        rm.AddIngredient("ll-ion-roboport", "stepper-motor", 30)
+        if not data.raw.item["tracker"] then
+            rm.AddIngredient("ll-ion-roboport", "transceiver", 30)
+        end
+    end
+
+    if mods["space-age"] then
+        --only things that need silicon off of luna are integrated circuits (& processing units)
+        --vulcanus: added recipe to get silicon
+        --fulgora: get directly from scrap
+        --gleba: craft from biocultures
+        --nauvis: you're supposed to depend on luna
+        --aquilo: it's aquilo
+        --modded planets: the ten thousand deaths (translator's note: this is english for "die ten thousand deaths")
+        --this also increases the value of electrolytic chips
+        rm.ReplaceIngredientProportional("processing-unit", "integrated-circuit", "electronic-circuit", 1, 3)
+        rm.ReplaceIngredientProportional("ll-processing-unit-without-silicon", "electronic-circuit", "integrated-circuit", 1, 10)
+        rm.AddRecipeCategory("ll-processing-unit-without-silicon", "electromagnetics")
+        rm.AddProduct("ll-processing-unit-without-silicon", "depleted-acid", 5)
+        data.raw.recipe["processing-unit"].icons[2].icon = "__LunarLandings__/graphics/icons/low-gravity-assembling-machine.png"
+        data.raw.item["processing-unit"].weight = 2 * kg
+    end
+end
+
 --mods that just use vanilla-like ore generation will not get special design effort
 if mods["tenebris"] then
     data.raw.planet["tenebris"].map_gen_settings.autoplace_controls["gold-ore"] = {}
