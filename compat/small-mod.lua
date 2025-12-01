@@ -12,6 +12,13 @@ if mods["se-space-trains"] then
         rm.AddIngredient("space-cargo-wagon", "heavy-cable", 20)
         rm.AddIngredient("space-fluid-wagon", "heavy-cable", 20)
     end
+
+    if #data.raw.recipe["space-locomotive"].ingredients > 5 then
+        rm.RemoveIngredient("space-locomotive", "steel-plate", 99999)
+        rm.RemoveIngredient("space-cargo-wagon", "steel-plate", 99999)
+        rm.RemoveIngredient("space-fluid-wagon", "steel-plate", 99999)
+    end
+
     if misc.difficulty == 3 and not mods["space-age"] then
         rm.AddIngredient("space-train-battery-pack", "heavy-cable", 1)
     end
