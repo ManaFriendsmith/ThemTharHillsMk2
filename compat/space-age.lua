@@ -52,10 +52,14 @@ if data.raw.item["stem-cells"] then
     rm.AddIngredient("musculoskeletal-bioculture", "neural-bioculture", 1)
     rm.AddIngredient("cardiac-bioculture", "neural-bioculture", 1)
     rm.AddIngredient("vestibular-bioculture", "neural-bioculture", 1)
-
-    rm.AddIngredient("perpendicular-processor", "neural-bioculture", 5)
-    rm.AddIngredient("logic-deregulator", "neural-bioculture", 5)
 end
+
+if data.raw.item["malleable-logarithmic-casing"] then
+    rm.RemoveIngredient("perpendicular-processor", "iron-stick", 7)
+    rm.RemoveIngredient("logic-deregulator", "hazard-concrete", 7)
+end
+rm.AddIngredient("perpendicular-processor", "neural-bioculture", 5)
+rm.AddIngredient("logic-deregulator", "neural-bioculture", 5)
 
 --FULGORA
 
@@ -87,6 +91,7 @@ if mods["LasingAround"] and misc.difficulty > 1 then
     rm.AddIngredient("electrolaser", "heavy-cable", 1)
     rm.AddIngredient("galvaser", "heavy-cable", 1)
     rm.AddIngredient("milaser", "heavy-cable", 1)
+    rm.AddIngredient("halaser", "heavy-cable", 1)
 end
 
 if misc.difficulty == 3 and rm.GetIngredientCount("electromagnetic-science-pack", "electric-engine-unit") == 0 then
