@@ -26,3 +26,28 @@ if mods["se-space-trains"] then
         rm.AddIngredient("space-train-battery-charging-station", "heavy-cable", 5)
     end
 end
+
+if mods["deadlock-beltboxes-loaders"] then
+
+    if misc.difficulty > 1 then
+        if mods["space-age"] then
+            if rm.GetIngredientCount("turbo-transport-belt-beltbox", "electric-engine-unit") == 0 then
+                rm.AddIngredient("turbo-transport-belt-beltbox", "electric-engine-unit", 5)
+            end
+
+        else
+            if rm.GetIngredientCount("express-transport-belt-beltbox", "electric-engine-unit") == 0 then
+                rm.AddIngredient("express-transport-belt-beltbox", "electric-engine-unit", 2)
+            end
+
+        end
+
+        rm.AddIngredient("express-transport-belt-beltbox", "stepper-motor", 5)
+        rm.RemoveIngredient("express-transport-belt-beltbox", "iron-gear-wheel", 99999)
+    end
+
+    if misc.difficulty == 1 or not ((mods["LasingAroundmk2"] and not mods["space-age"]) or (mods["BrassTacksMk2"] and misc.difficulty > 1)) then
+        rm.AddIngredient("express-transport-belt-beltbox", "integrated-circuit", 10)
+    end
+
+end

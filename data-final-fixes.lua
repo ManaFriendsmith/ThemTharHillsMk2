@@ -6,3 +6,5 @@ if misc.difficulty == 3 and mods["space-age"] and #data.raw.recipe["cryogenic-pl
     rm.AddIngredient("hydrocoptic-marzelvane", "lithium-plate", 1)
     rm.RemoveIngredient("cryogenic-plant", "lithium-plate", 99999)
 end
+
+require("compat.deadlock")
