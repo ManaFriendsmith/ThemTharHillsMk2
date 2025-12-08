@@ -19,6 +19,7 @@ data:extend({
         results = {
             {type="fluid", name="nitric-acid", amount=100}
         },
+        auto_recycle = false,
         energy_required = 2,
         allow_productivity = true,
         enabled = false,
@@ -44,6 +45,7 @@ data:extend({
         results = {
             {type="item", name="gold-powder", amount=1}
         },
+        auto_recycle = false,
         energy_required = 5,
         allow_productivity = true,
         enabled = false,
@@ -66,6 +68,7 @@ data:extend({
             {type="item", name="gold-powder", amount=2},
             {type="fluid", name="depleted-acid", amount=10},
         },
+        auto_recycle = false,
         main_product = "gold-powder",
         energy_required = 1,
         allow_productivity = true,
@@ -102,6 +105,7 @@ data:extend({
             {type="item", name="gold-powder", amount=1},
             {type="fluid", name="depleted-acid", amount=30},
         },
+        auto_recycle = false,
         main_product = "gold-powder",
         energy_required = 1,
         allow_productivity = true,
@@ -123,6 +127,7 @@ data:extend({
         results = {
             {type="item", name="gold-plate", amount=1}
         },
+        auto_recycle = false,
         energy_required = 3.2,
         allow_productivity = true,
         enabled = false
@@ -189,6 +194,7 @@ if mods["LunarLandings"] then
                     {type="item", name="ll-moon-rock", amount=3},
                     {type="fluid", name="light-oil", amount=10, fluidbox_index = 1}
                 },
+                auto_recycle = false,
                 always_show_products = true,
                 enabled = false
             }
@@ -205,6 +211,7 @@ if mods["LunarLandings"] then
                 icon = "__LunarLandings__/graphics/icons/silica.png",
                 icon_size = 64,
                 energy_required = 5,
+                auto_recycle = false,
                 ingredients = {
                     {type="item", name="stone", amount=20},
                     {type="item", name="calcite", amount=2},
@@ -241,6 +248,7 @@ if mods["LunarLandings"] then
         subgroup = "fluid-recipes",
         order = "c[oil-products]-da",
         energy_required = 10,
+        auto_recycle = false,
         allow_decomposition = false,
         allow_productivity = true,
         ingredients = {
@@ -276,6 +284,7 @@ if mods["space-age"] then
                 results = {
                     {type="item", name="neural-bioculture", amount=4}
                 },
+                auto_recycle = false,
                 energy_required = 2,
                 allow_productivity = true,
                 enabled = false,
@@ -297,6 +306,7 @@ if mods["space-age"] then
                 results = {
                     {type="item", name="neural-bioculture", amount=8}
                 },
+                auto_recycle = false,
                 energy_required = 4,
                 allow_productivity = true,
                 enabled = false,
@@ -314,7 +324,7 @@ if mods["space-age"] then
         data:extend({
             {
                 type = "recipe",
-                name = "custom-gold-plate-recycling",
+                name = "gold-plate-recycling",
                 localised_name = {"recipe-name.recycling", {"item-name.gold-plate"}},
                 icons = {
                           {
@@ -323,7 +333,8 @@ if mods["space-age"] then
                           },
                           {
                             icon = "__ThemTharHillsMk2__/graphics/icons/gold-plate.png",
-                            icon_size = 64
+                            icon_size = 64,
+                            scale = 0.33
                           },
                           {
                             icon = "__quality__/graphics/icons/recycling-top.png",
@@ -378,6 +389,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="integrated-circuit", amount=2}
             },
+            auto_recycle = false,
             energy_required = 1,
             lasermill_dlc = {helium = -1, unlock="neural-electronics"},
             allow_productivity = true,
@@ -407,6 +419,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="copper-cable", amount_min=1, amount_max=4}
             },
+            auto_recycle = false,
             energy_required = 1,
             allow_productivity = true,
             auto_recycle = false,
@@ -426,6 +439,7 @@ if mods["space-age"] then
             results = {
                 {type="fluid", name="molten-gold", amount=500}
             },
+            auto_recycle = false,
             energy_required = 8,
             allow_productivity = true,
             enabled = false
@@ -449,6 +463,7 @@ if mods["space-age"] then
                 {type="fluid", name="depleted-acid", amount=500, fluidbox_multiplier=10},
                 {type="item", name="stone", amount=15},
             },
+            auto_recycle = false,
             energy_required = 16,
             allow_productivity = true,
             enabled = false
@@ -467,6 +482,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="gold-plate", amount=2}
             },
+            auto_recycle = false,
             energy_required = 3.2,
             allow_productivity = true,
             enabled = false
@@ -485,6 +501,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="gold-wire", amount=2}
             },
+            auto_recycle = false,
             energy_required = 1,
             allow_productivity = true,
             enabled = false
@@ -517,6 +534,7 @@ if mods["space-age"] then
                 {type="item", name="gold-powder", amount=30},
                 {type="item", name="copper-ore", amount=2}
             },
+            auto_recycle = false,
             energy_required = 100,
             allow_productivity = true,
             enabled = false,
@@ -551,6 +569,7 @@ if mods["space-age"] then
             results = {
                 {type="item", name="gold-wire", amount=data.raw["recipe-category"]["electroplating"] and 8 or 10}
             },
+            auto_recycle = false,
             energy_required = 2.5,
             allow_productivity = true,
             enabled = false
@@ -581,6 +600,7 @@ if mods["space-age"] then
                 {type="item", name="integrated-circuit", amount=1},
                 {type="fluid", name="depleted-acid", amount=2}
             },
+            auto_recycle = false,
             energy_required = 1,
             main_product = "integrated-circuit",
             enabled = false
@@ -619,6 +639,7 @@ if mods["space-age"] then
                     {type="item", name="integrated-circuit", amount=2},
                     {type="fluid", name="depleted-acid", amount=1}
                 },
+                auto_recycle = false,
                 subgroup = "nitric-acid-and-nitrogen",
                 order = "fa",
                 main_product = "integrated-circuit",
@@ -659,6 +680,7 @@ if mods["space-age"] then
                     {type="item", name="integrated-circuit", amount=8},
                     {type="fluid", name="depleted-acid", amount=10}
                 },
+                auto_recycle = false,
                 subgroup = "castra-processes",
                 order = "g",
                 main_product = "integrated-circuit",
@@ -829,6 +851,7 @@ if mods["LunarLandings"] then
             shift = {-8, -8}
             }
         },
+        auto_recycle = false,
         energy_required = 20,
         allow_decomposition = false,
         ingredients = {

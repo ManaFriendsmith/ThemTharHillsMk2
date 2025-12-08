@@ -8,3 +8,8 @@ if misc.difficulty == 3 and mods["space-age"] and #data.raw.recipe["cryogenic-pl
 end
 
 require("compat.deadlock")
+
+if mods["quality"] and misc.last_pf_mod == "ThemTharHillsMk2" then
+    rm.FixStackingRecycling()
+    require("__quality__/data-updates.lua")
+end
