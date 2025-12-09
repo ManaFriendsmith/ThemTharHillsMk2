@@ -149,7 +149,7 @@ if mods["castra"] then
     rm.AddProduct("processing-unit-battlefield-data", "depleted-acid", 40)
 
     if mods["BrassTacksMk2"] then
-        rm.AddProduct("custom-ancient-military-wreckage-recycling", {type="item", name="transceiver", amount=1, probability=0.04})
+        rm.AddProduct("ancient-military-wreckage-recycling", {type="item", name="transceiver", amount=1, probability=0.04})
     end
 
     tm.AddUnlock("planet-discovery-castra", "integrated-circuit-battlefield-data", "-processing-unit-battlefield-data")

@@ -69,7 +69,7 @@ if misc.difficulty > 1 then
     rm.AddProduct("scrap-recycling", {type="item", name="heavy-cable", amount=1, probability=0.03})
 
     if mods["LasingAroundMk2"] then
-        rm.AddProduct("custom-weird-alien-gizmo-recycling", {type="item", name="integrated-circuit", amount=1, probability=0.7})
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="integrated-circuit", amount=1, probability=0.7})
     end
 end
 rm.ReplaceIngredientProportional("superconductor", "copper-plate", "gold-wire", 2)
