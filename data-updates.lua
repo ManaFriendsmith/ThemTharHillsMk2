@@ -1,3 +1,5 @@
+local misc = require("__pf-functions__/misc")
+local rm = require("__pf-functions__/recipe-manipulation")
 
 require("compat.vanilla")
 
@@ -8,3 +10,10 @@ end
 require("compat.bz")
 require("compat.mod-planets")
 require("compat.small-mod")
+
+require("compat.deadlock")
+
+if mods["quality"] and misc.last_pf_mod == "ThemTharHillsMk2" then
+    rm.FixStackingRecycling()
+    require("__quality__/data-updates.lua")
+end
