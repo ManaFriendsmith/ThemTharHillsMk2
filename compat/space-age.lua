@@ -92,6 +92,7 @@ if mods["LasingAroundMk2"] and misc.difficulty > 1 then
     rm.AddIngredient("galvaser", "heavy-cable", 1)
     rm.AddIngredient("milaser", "heavy-cable", 1)
     rm.AddIngredient("halaser", "heavy-cable", 1)
+    rm.AddIngredient("lunaser", "heavy-cable", 1)
 end
 
 if misc.difficulty == 3 and rm.GetIngredientCount("electromagnetic-science-pack", "electric-engine-unit") == 0 then
@@ -114,6 +115,12 @@ if misc.difficulty == 3 then
 
         rm.MultiplyRecipe("cryogenic-science-pack", 2)
         rm.ReplaceIngredientProportional("cryogenic-science-pack", "ice", "hydrocoptic-marzelvane", 0.16)
+
+        --this logic is also duplicated into brimstuff as it adds an extra ingredient to cryoplants
+        if data.raw.item["hydrocoptic-marzelvane"] and #data.raw.recipe["cryogenic-plant"].ingredients > 6 and rm.GetIngredientCount("cryogenic-plant", "lithium-plate") > 0 then
+            rm.AddIngredient("hydrocoptic-marzelvane", "lithium-plate", 1)
+            rm.RemoveIngredient("cryogenic-plant", "lithium-plate", 99999)
+        end
     end
 
     rm.ReplaceIngredientProportional("productivity-module-3", "ice", "hydrocoptic-marzelvane", 0.1)

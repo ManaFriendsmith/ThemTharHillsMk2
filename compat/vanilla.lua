@@ -196,11 +196,14 @@ rm.AddIngredient("accumulator", "gold-wire", 2)
 if misc.difficulty == 3 and misc.starting_planet == "nauvis" then
     if rm.GetIngredientCount("solar-panel", "copper-plate") > 0 then
         rm.ReplaceIngredientProportional("solar-panel", "copper-plate", "gold-plate")
+        rm.ReplaceIngredientProportional("muluna-silicon-solar-panel", "copper-plate", "gold-plate")
     else
-        if rm.GetIngredientCount("solar-panel", "copper-plate") > 0 then
+        if rm.GetIngredientCount("solar-panel", "lead-plate") > 0 then
             rm.ReplaceIngredientProportional("solar-panel", "lead-plate", "gold-plate")
+            rm.ReplaceIngredientProportional("muluna-silicon-solar-panel", "lead-plate", "gold-plate")
         else
             rm.AddIngredient("solar-panel", "gold-plate", 5)
+            rm.AddIngredient("muluna-silicon-solar-panel", "gold-plate", 5)
         end
     end
     if rm.GetIngredientCount("solar-panel", "gold-plate") then

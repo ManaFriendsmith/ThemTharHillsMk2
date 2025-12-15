@@ -159,3 +159,35 @@ if mods["castra"] then
         rm.AddIngredient("jammer-radar", "transceiver", 10)
     end
 end
+
+if mods["planet-muluna"] then
+    if misc.difficulty == 2 then
+        rm.ReplaceIngredientProportional("electric-engine-unit-from-carbon", "electronic-circuit", "heavy-cable", 0.5)
+    elseif misc.difficulty == 3 then
+        rm.ReplaceIngredientProportional("electric-engine-unit-from-carbon", "electronic-circuit", "semiboloid-stator", 1)
+        rm.ReplaceIngredientProportional("cryolab", "biter-egg", "hydrocoptic-marzelvane")
+    end
+
+    rm.AddProduct("muluna-regolith-sorting", {type="item", name="gold-ore", amount=1, probability=0.1})
+
+    if rm.GetIngredientCount("integrated-circuit", "copper-plate") > 0 then
+        local muluna_chip = table.deepcopy(data.raw.recipe["integrated-circuit"])
+        muluna_chip.name = "integrated-circuit-from-aluminum"
+        muluna_chip.icons = {
+            {
+                icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+                icon_size = 64
+            },
+            {
+                icon = "__muluna-graphics__/graphics/icons/metal-plate-aluminium.png",
+                icon_size = 64,
+                shift = {-8, -8},
+                scale = 0.25
+            }
+        }
+        muluna_chip.auto_recycle = false
+        rm.ReplaceIngredientProportional(muluna_chip, "copper-plate", "aluminum-plate")
+        data:extend({muluna_chip})
+        tm.AddUnlock("muluna-aluminum-processing", "integrated-circuit-from-aluminum")
+    end
+end
