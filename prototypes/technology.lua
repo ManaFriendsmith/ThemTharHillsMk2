@@ -38,7 +38,7 @@ data:extend({
         effects = {
             {
                 type = "unlock-recipe",
-                recipe = "nitric-acid"
+                recipe = "pf-nitric-acid"
             },
             {
                 type = "unlock-recipe",
