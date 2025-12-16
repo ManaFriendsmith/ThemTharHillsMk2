@@ -175,7 +175,7 @@ if mods["planet-muluna"] then
         muluna_chip.name = "integrated-circuit-from-aluminum"
         muluna_chip.icons = {
             {
-                icon = "__ThemTharHills__/graphics/icons/integrated-circuit.png",
+                icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
                 icon_size = 64
             },
             {
@@ -189,5 +189,20 @@ if mods["planet-muluna"] then
         rm.ReplaceIngredientProportional(muluna_chip, "copper-plate", "aluminum-plate")
         data:extend({muluna_chip})
         tm.AddUnlock("muluna-aluminum-processing", "integrated-circuit-from-aluminum")
+    end
+end
+
+if mods["Cerys-Moon-of-Fulgora"] then
+    rm.ReplaceIngredientProportional("cerys-processing-units-from-nitric-acid", "electronic-circuit", "integrated-circuit", 1, 8)
+    rm.AddProduct("cerys-processing-units-from-nitric-acid", "depleted-acid", 5)
+
+    tm.AddUnlock("cerys-fulgoran-cryogenics", "integrated-circuits-from-nitric-acid", "-cerys-processing-units-from-nitric-acid")
+    if mods["Paracelsin"] then
+        rm.AddRecipeCategory("integrated-circuits-from-nitric-acid", "electrochemistry")
+    end
+
+    if misc.difficulty == 1 then
+        --gold only available from breaking down red circuits, help out a little
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="integrated-circuit", amount=1, probability=0.03})
     end
 end
