@@ -6,7 +6,7 @@ local space_age_item_sounds = "foo"
 data:extend({
     {
         type = "recipe",
-        name = "nitric-acid",
+        name = "pf-nitric-acid",
         category = mods["space-age"] and "organic-or-chemistry" or "chemistry",
         subgroup = "fluid-recipes",
         order = "c[oil-products]-c",
@@ -610,7 +610,46 @@ if mods["space-age"] then
         rm.AddIngredient("neural-microchip", "jelly", 1)
     end
 
-    if mods["Paracelsin"] then
+    if mods["Cerys-Moon-of-Fulgora"] then
+        data:extend({
+            {
+                type = "recipe",
+                name = "integrated-circuits-from-nitric-acid",
+                category = "cryogenics",
+                additional_categories = {"electromagnetics"},
+                icons = {
+                    {
+                        icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__Cerys-Moon-of-Fulgora__/graphics/icons/nitric-acid.png",
+                        icon_size = 64,
+                        scale = 0.25,
+                        shift = {-8, -8}
+                    }
+                },
+                ingredients = {
+                    {type="item", name="gold-plate", amount=2},
+                    {type="item", name="copper-plate", amount=2},
+                    {type="item", name="plastic-bar", amount=1},
+                    {type="fluid", name="nitric-acid", amount=1},
+                },
+                results = {
+                    {type="item", name="integrated-circuit", amount=2},
+                    {type="fluid", name="depleted-acid", amount=1}
+                },
+                auto_recycle = false,
+                subgroup = "cerys-processes",
+                order = "d-ca",
+                main_product = "integrated-circuit",
+                lasermill_dlc = {helium = -1, unlock=mods["Paracelsin"] and {"electrochemical-plant", "cerys-fulgoran-cryogenics"} or "cerys-fulgoran-cryogenics", icon_offset={8, -8}},
+                energy_required = 1,
+                allow_productivity = true,
+                enabled = false
+            }
+        })
+    elseif mods["Paracelsin"] then
         data:extend({
             {
                 type = "recipe",
@@ -643,7 +682,7 @@ if mods["space-age"] then
                 subgroup = "nitric-acid-and-nitrogen",
                 order = "fa",
                 main_product = "integrated-circuit",
-                lasermill_dlc = {helium = -1, unlock="electrochemical-plant", icon_offset={8, -8}},
+                lasermill_dlc = {helium = -1, unlock={"electrochemical-plant"}, icon_offset={8, -8}},
                 energy_required = 1,
                 allow_productivity = true,
                 enabled = false
