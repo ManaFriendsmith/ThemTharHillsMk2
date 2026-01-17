@@ -61,6 +61,9 @@ end
 rm.AddIngredient("perpendicular-processor", "neural-bioculture", 5)
 rm.AddIngredient("logic-deregulator", "neural-bioculture", 5)
 
+rm.ReplaceIngredientProportional("brain-galactification", "bioflux", "neural-bioculture", 4)
+rm.MultiplyRecipe("brain-galactification", 0.25)
+
 --FULGORA
 
 if misc.difficulty > 1 then
