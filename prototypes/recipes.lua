@@ -942,15 +942,15 @@ if mods["space-age"] then
             category = mods["maraxsis"] and "maraxsis-hydro-plant-or-assembling" or "cryogenics-or-assembling",
             ingredients = {
                 {type="item", name="stepper-motor", amount=4},
-                {type="item", name="pipe", amount=10},
-                {type="item", name=mods["maraxsis"] and "maraxsis-glass-panes" or "lithium-plate", amount=mods["maraxsis"] and 5 or 2},
-                {type="item", name="superconductor", amount=5},
+                {type="item", name="pipe", amount=8},
+                {type="item", name=mods["maraxsis"] and "maraxsis-glass-panes" or "lithium-plate", amount=4},
+                {type="item", name="superconductor", amount=8},
                 {type="fluid", name=mods["maraxsis"] and "maraxsis-saline-water" or "fluorine", amount=50}
             },
             results = {
                 {type="item", name="hydrocoptic-marzelvane", amount=1}
             },
-            energy_required = 6,
+            energy_required = 20,
             lasermill_dlc = {helium = -1, unlock=mods["maraxsis"] and "maraxsis-hydro-plant" or "cryogenic-plant"},
             allow_productivity = true,
             enabled = false,
