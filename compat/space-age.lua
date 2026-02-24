@@ -58,8 +58,8 @@ if data.raw.item["malleable-logarithmic-casing"] then
     rm.RemoveIngredient("perpendicular-processor", "iron-stick", 7)
     rm.RemoveIngredient("logic-deregulator", "hazard-concrete", 7)
 end
-rm.AddIngredient("perpendicular-processor", "neural-bioculture", 5)
-rm.AddIngredient("logic-deregulator", "neural-bioculture", 5)
+rm.AddIngredient("perpendicular-processor", "neural-bioculture", 8)
+rm.AddIngredient("logic-deregulator", "neural-bioculture", 8)
 
 rm.ReplaceIngredientProportional("brain-galactification", "bioflux", "neural-bioculture", 4)
 rm.MultiplyRecipe("brain-galactification", 0.25)
