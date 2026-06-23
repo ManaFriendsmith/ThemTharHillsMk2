@@ -19,9 +19,6 @@ end
 
 --VULCANUS
 
-table.insert(data.raw["assembling-machine"]["chemical-plant"].crafting_categories, "chemistry-or-metallurgy")
-table.insert(data.raw["assembling-machine"]["foundry"].crafting_categories, "chemistry-or-metallurgy")
-
 if mods["BrimStuffMk2"] then
     rm.ReplaceIngredientProportional("foundry", "electronic-circuit", "heavy-cable")    
 end
@@ -69,14 +66,14 @@ rm.MultiplyRecipe("brain-galactification", 0.25)
 if misc.difficulty > 1 then
     rm.AddIngredient("electromagnetic-plant", "stepper-motor", 50)
     rm.AddIngredient("lightning-collector", "heavy-cable", 5)
-    rm.AddProduct("scrap-recycling", {type="item", name="heavy-cable", amount=1, probability=0.03})
+    rm.AddProduct("scrap-recycling", {type="item", name="heavy-cable", amount=1, independent_probability=0.03})
 
     if mods["LasingAroundMk2"] then
-        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="integrated-circuit", amount=1, probability=0.7})
+        rm.AddProduct("weird-alien-gizmo-recycling", {type="item", name="integrated-circuit", amount=1, independent_probability=0.7})
     end
 end
 rm.ReplaceIngredientProportional("superconductor", "copper-plate", "gold-wire", 2)
-rm.AddProduct("spectroscopic-holmium-processing", {type="item", name="gold-powder", amount=1, probability=0.33})
+rm.AddProduct("spectroscopic-holmium-processing", {type="item", name="gold-powder", amount=1, independent_probability=0.33})
 
 if misc.starting_planet == "fulgora" then
     tm.RemoveUnlock("gold-electronics", "gold-wire")
@@ -112,7 +109,7 @@ if misc.difficulty == 3 then
         rm.AddIngredient("captive-biter-spawner", "hydrocoptic-marzelvane", 10)
 
         --every other FK recipe takes cold, making chem plants able to cool FK would be too strong (much better energy:speed ratio) so there is this kludge
-        --data.raw.recipe["fluoroketone"].category = "chemistry-or-cryogenics"
+        --data.raw.recipe["fluoroketone"].categories={"chemistry-or-cryogenics"}
         --rm.RemoveProduct("fluoroketone", "fluoroketone-hot", 2)
         --rm.AddProduct("fluoroketone", "fluoroketone-cold", 2)
 

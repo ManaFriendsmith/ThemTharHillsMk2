@@ -153,9 +153,10 @@ if mods["space-age"] then
             auto_barrel = false,
             default_temperature = 1070,
             max_temperature = 2000,
-            base_color = {1, 0.85, 0, 1},
-            flow_color = {1, 1, 0.5, 1},
-            visualization_color = {1, 0.85, 0, 1}
+            base_color = {0.5, 0.425, 0, 1},
+            flow_color = {1, 0.85, 0, 1},
+            visualization_color = {1, 0.85, 0, 1},
+            draw_as_glow = true
         },
         {
             type = "item",

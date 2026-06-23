@@ -26,7 +26,7 @@ if mods["LunarLandings"] then
     rm.RemoveIngredient("processing-unit", "ll-silicon", 5)
     rm.ReplaceIngredientProportional("integrated-circuit", "copper-plate", "ll-silicon", 0.5)
 
-    data.raw.recipe["integrated-circuit"].category = "advanced-circuit-crafting"
+    data.raw.recipe["integrated-circuit"].categories={"advanced-circuit-crafting"}
     rm.AddRecipeCategory("semiboloid-stator", "circuit-crafting")
     rm.AddRecipeCategory("stepper-motor", "circuit-crafting")
     rm.AddRecipeCategory("gold-wire", "circuit-crafting")
@@ -149,7 +149,7 @@ if mods["castra"] then
     rm.AddProduct("processing-unit-battlefield-data", "depleted-acid", 40)
 
     if mods["BrassTacksMk2"] then
-        rm.AddProduct("ancient-military-wreckage-recycling", {type="item", name="transceiver", amount=1, probability=0.04})
+        rm.AddProduct("ancient-military-wreckage-recycling", {type="item", name="transceiver", amount=1, independent_probability=0.04})
     end
 
     tm.AddUnlock("planet-discovery-castra", "integrated-circuit-battlefield-data", "-processing-unit-battlefield-data")
@@ -168,7 +168,7 @@ if mods["planet-muluna"] then
         rm.ReplaceIngredientProportional("cryolab", "biter-egg", "hydrocoptic-marzelvane")
     end
 
-    rm.AddProduct("muluna-regolith-sorting", {type="item", name="gold-ore", amount=1, probability=0.1})
+    rm.AddProduct("muluna-regolith-sorting", {type="item", name="gold-ore", amount=1, independent_probability=0.1})
 
     if rm.GetIngredientCount("integrated-circuit", "copper-plate") > 0 then
         local muluna_chip = table.deepcopy(data.raw.recipe["integrated-circuit"])
@@ -203,6 +203,6 @@ if mods["Cerys-Moon-of-Fulgora"] then
 
     if misc.difficulty == 1 then
         --gold only available from breaking down red circuits, help out a little
-        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="integrated-circuit", amount=1, probability=0.03})
+        rm.AddProduct("cerys-nuclear-scrap-recycling", {type="item", name="integrated-circuit", amount=1, independent_probability=0.03})
     end
 end

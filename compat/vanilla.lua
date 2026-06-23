@@ -31,7 +31,7 @@ if misc.difficulty > 1 then
     if misc.difficulty == 2 then
         rm.ReplaceIngredientProportional("electric-engine-unit", "electronic-circuit", "heavy-cable", 0.5)
     else
-        rm.ReplaceIngredientProportional("electric-engine-unit", "electronic-circuit", "semiboloid-stator", 1)
+        rm.ReplaceIngredientProportional("electric-engine-unit", "electronic-circuit", "semiboloid-stator", mods["space-age"] and 1.5 or 1)
     end
 end
 
@@ -45,14 +45,15 @@ if misc.difficulty > 1 then
     elseif not (mods["LasingAroundMk2"] and mods["BrassTacksMk2"]) then
         rm.AddIngredient("rocket-part", "transceiver", 10)
     end
-end
 
-if not mods["space-age"] then
-    rm.AddIngredient("satellite", "transceiver", 50)
+    if not mods["space-age"] then
+        rm.AddIngredient("satellite", "transceiver", 100)
+    end
 end
 
 if misc.difficulty > 1 and mods["LunarLandings"] then
     rm.ReplaceIngredientProportional("rocket-control-unit", "advanced-circuit", "transceiver", 1, 1)
+    rm.ReplaceIngredientProportional("ll-rocket-control-unit", "advanced-circuit", "transceiver", 1, 1)
 end
 
 if mods["LasingAroundMk2"] then
@@ -163,7 +164,7 @@ if misc.difficulty > 1 and rm.GetIngredientCount("assembling-machine-3", "electr
 end
 
 if misc.difficulty > 1 and not mods["BrassTacksMk2"] then
-    rm.AddIngredient("assembling-machine-3", "stepper-motor", 10)
+    rm.AddIngredient("assembling-machine-3", "stepper-motor", misc.difficulty == 3 and 16 or 8)
 end
 
 if misc.difficulty > 1 and rm.GetIngredientCount("centrifuge", "electric-engine-unit") == 0 then
@@ -173,12 +174,12 @@ end
 
 if misc.difficulty == 2 and mods["space-age"] then
     rm.ReplaceIngredientProportional("electric-furnace", "advanced-circuit", "heavy-cable", 1)
-else
+elseif misc.difficulty > 1 then
     rm.AddIngredient("electric-furnace", "heavy-cable", 5)
 end
 
 if mods["LasingAroundMk2"] and misc.difficulty > 1 then
-    rm.AddIngredient("laser-mill", "stepper-motor", 20)
+    rm.AddIngredient("laser-mill", "stepper-motor", misc.difficulty == 3 and 30 or 20)
     if mods["LunarLandings"] and not mods["space-age"] then
         rm.RemoveIngredient("laser-mill", "cooling-fan", 10)
     end
@@ -254,7 +255,7 @@ else
     rm.AddIngredient("beacon", "heavy-cable", 10)
     rm.RemoveIngredient("beacon", "copper-cable", 99999)
     rm.RemoveIngredient("beacon", "tinned-cable", 99999)
-    rm.ReplaceIngredientProportional("beacon", "electronic-circuit", "transceiver", 0.25)
+    rm.ReplaceIngredientProportional("beacon", "electronic-circuit", "transceiver", misc.difficulty == 3 and 0.5 or 0.25)
     rm.ReplaceIngredientProportional("beacon", "advanced-circuit", "integrated-circuit", 2.5)
 end
 

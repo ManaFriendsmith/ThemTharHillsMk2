@@ -94,3 +94,11 @@ if mods["scrap-industry"] then
         ScrapIndustry.recipes["gold-wire"] = {ignore=true}
     end
 end
+
+if mods["pf-beacon-rework"] then
+    if tune_up_data then
+        if misc.difficulty > 1 then
+            tune_up_data.AddIngredient("breaker-box", "heavy-cable", 2)
+        end
+    end
+end
