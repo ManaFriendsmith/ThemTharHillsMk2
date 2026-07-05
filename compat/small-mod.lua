@@ -28,18 +28,15 @@ if mods["se-space-trains"] then
 end
 
 if mods["deadlock-beltboxes-loaders"] then
-
     if misc.difficulty > 1 then
         if mods["space-age"] then
             if rm.GetIngredientCount("turbo-transport-belt-beltbox", "electric-engine-unit") == 0 then
                 rm.AddIngredient("turbo-transport-belt-beltbox", "electric-engine-unit", 5)
             end
-
         else
             if rm.GetIngredientCount("express-transport-belt-beltbox", "electric-engine-unit") == 0 then
                 rm.AddIngredient("express-transport-belt-beltbox", "electric-engine-unit", 2)
             end
-
         end
 
         rm.AddIngredient("express-transport-belt-beltbox", "stepper-motor", 5)
@@ -49,7 +46,6 @@ if mods["deadlock-beltboxes-loaders"] then
     if misc.difficulty == 1 or not ((mods["LasingAroundmk2"] and not mods["space-age"]) or (mods["BrassTacksMk2"] and misc.difficulty > 1)) then
         rm.AddIngredient("express-transport-belt-beltbox", "integrated-circuit", 10)
     end
-
 end
 
 if mods["scrap-industry"] then
@@ -63,35 +59,46 @@ if mods["scrap-industry"] then
         end
     end
 
-    ScrapIndustry.items["gold-plate"] = {scrap="gold-scrap", scale=ScrapIndustry.COMMON, failrate=0.01, recycle=3}
-    ScrapIndustry.items["gold-wire"] = {scrap="gold-scrap", scale=ScrapIndustry.CHEAP, failrate=0.02}
+    ScrapIndustry.items["gold-plate"] = { scrap = "gold-scrap", scale = ScrapIndustry.COMMON, failrate = 0.01, recycle = 3 }
+    ScrapIndustry.items["gold-wire"] = { scrap = "gold-scrap", scale = ScrapIndustry.CHEAP, failrate = 0.02 }
 
     rm.ReplaceIngredientProportional("advanced-circuit-from-scrap", "copper-cable", "gold-wire")
     rm.ReplaceIngredientProportional("processing-unit-from-scrap", "copper-cable", "gold-wire")
 
     if data.raw.item["plastic-bits"] then
-        ScrapIndustry.items["integrated-circuit"] = {scrap={"gold-scrap", "circuit-scrap", "plastic-bits"}, scale=ScrapIndustry.CHEAP, failrate=0.01}
-        ScrapIndustry.items["advanced-circuit"] = {scrap={"gold-scrap", "circuit-scrap", "plastic-bits"}, scale=ScrapIndustry.UNCOMMON, failrate=0.02}
-        ScrapIndustry.items["heavy-cable"] = {scrap={"gold-scrap", "circuit-scrap", mods["BrimStuffMk2"] and "rubber-bits" or "plastic-bits"}, scale=ScrapIndustry.UNCOMMON, failrate=0.02}
+        ScrapIndustry.items["integrated-circuit"] = { scrap = { "gold-scrap", "circuit-scrap", "plastic-bits" }, scale =
+        ScrapIndustry.CHEAP, failrate = 0.01 }
+        ScrapIndustry.items["advanced-circuit"] = { scrap = { "gold-scrap", "circuit-scrap", "plastic-bits" }, scale =
+        ScrapIndustry.UNCOMMON, failrate = 0.02 }
+        ScrapIndustry.items["heavy-cable"] = { scrap = { "gold-scrap", "circuit-scrap", mods["BrimStuffMk2"] and "rubber-bits" or "plastic-bits" }, scale =
+        ScrapIndustry.UNCOMMON, failrate = 0.02 }
     else
-        ScrapIndustry.items["integrated-circuit"] = {scrap={"gold-scrap", "circuit-scrap"}, scale=ScrapIndustry.CHEAP, failrate=0.01}
-        ScrapIndustry.items["advanced-circuit"] = {scrap={"gold-scrap", "circuit-scrap"}, scale=ScrapIndustry.UNCOMMON, failrate=0.02}
-        ScrapIndustry.items["heavy-cable"] = {scrap={"gold-scrap", "circuit-scrap"}, scale=ScrapIndustry.UNCOMMON, failrate=0.02}
+        ScrapIndustry.items["integrated-circuit"] = { scrap = { "gold-scrap", "circuit-scrap" }, scale = ScrapIndustry
+        .CHEAP, failrate = 0.01 }
+        ScrapIndustry.items["advanced-circuit"] = { scrap = { "gold-scrap", "circuit-scrap" }, scale = ScrapIndustry
+        .UNCOMMON, failrate = 0.02 }
+        ScrapIndustry.items["heavy-cable"] = { scrap = { "gold-scrap", "circuit-scrap" }, scale = ScrapIndustry.UNCOMMON, failrate = 0.02 }
     end
 
-    ScrapIndustry.items["transceiver"] = {scrap={"gold-scrap", "circuit-scrap"}, scale=ScrapIndustry.UNCOMMON, failrate=0.03}
+    ScrapIndustry.items["transceiver"] = { scrap = { "gold-scrap", "circuit-scrap" }, scale = ScrapIndustry.UNCOMMON, failrate = 0.03 }
     if data.raw.item["mech-scrap"] then
-        ScrapIndustry.items["stepper-motor"] = {scrap={"gold-scrap", mods["IfNickelMk2"] and "motor-scrap" or "mech-scrap"}, scale=ScrapIndustry.RARE, failrate=0.02}
-        ScrapIndustry.items["semiboloid-stator"] = {scrap={"gold-scrap", mods["IfNickelMk2"] and "motor-scrap" or "mech-scrap"}, scale=ScrapIndustry.UNCOMMON, failrate=0.02}
-        ScrapIndustry.items["hydrocoptic-marzelvane"] = {scrap={"gold-scrap", "lithium-dust", "holmium-scrap", mods["IfNickelMk2"] and "motor-scrap" or "mech-scrap"}, scale=ScrapIndustry.EXPENSIVE, failrate=0.04}
+        ScrapIndustry.items["stepper-motor"] = { scrap = { "gold-scrap", mods["IfNickelMk2"] and "motor-scrap" or "mech-scrap" }, scale =
+        ScrapIndustry.RARE, failrate = 0.02 }
+        ScrapIndustry.items["semiboloid-stator"] = { scrap = { "gold-scrap", mods["IfNickelMk2"] and "motor-scrap" or "mech-scrap" }, scale =
+        ScrapIndustry.UNCOMMON, failrate = 0.02 }
+        ScrapIndustry.items["hydrocoptic-marzelvane"] = { scrap = { "gold-scrap", "lithium-dust", "holmium-scrap", mods["IfNickelMk2"] and "motor-scrap" or "mech-scrap" }, scale =
+        ScrapIndustry.EXPENSIVE, failrate = 0.04 }
     else
-        ScrapIndustry.items["stepper-motor"] = {scrap={"gold-scrap", "iron-scrap", mods["IfNickelMk2"] and "nickel-scrap" or "circuit-scrap"}, scale=ScrapIndustry.RARE, failrate=0.02}
-        ScrapIndustry.items["semiboloid-stator"] = {scrap={"gold-scrap", "iron-scrap", mods["IfNickelMk2"] and "nickel-scrap" or "copper-scrap"}, scale=ScrapIndustry.UNCOMMON, failrate=0.02}
-        ScrapIndustry.items["hydrocoptic-marzelvane"] = {scrap={"gold-scrap", "lithium-dust", "holmium-scrap", mods["IfNickelMk2"] and "nickel-scrap" or "iron-scrap"}, scale=ScrapIndustry.EXPENSIVE, failrate=0.04}
+        ScrapIndustry.items["stepper-motor"] = { scrap = { "gold-scrap", "iron-scrap", mods["IfNickelMk2"] and "nickel-scrap" or "circuit-scrap" }, scale =
+        ScrapIndustry.RARE, failrate = 0.02 }
+        ScrapIndustry.items["semiboloid-stator"] = { scrap = { "gold-scrap", "iron-scrap", mods["IfNickelMk2"] and "nickel-scrap" or "copper-scrap" }, scale =
+        ScrapIndustry.UNCOMMON, failrate = 0.02 }
+        ScrapIndustry.items["hydrocoptic-marzelvane"] = { scrap = { "gold-scrap", "lithium-dust", "holmium-scrap", mods["IfNickelMk2"] and "nickel-scrap" or "iron-scrap" }, scale =
+        ScrapIndustry.EXPENSIVE, failrate = 0.04 }
     end
 
     if not settings.startup["scrap-industry-no-mercy"].value then
-        ScrapIndustry.recipes["gold-wire"] = {ignore=true}
+        ScrapIndustry.recipes["gold-wire"] = { ignore = true }
     end
 end
 

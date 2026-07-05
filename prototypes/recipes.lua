@@ -7,66 +7,66 @@ data:extend({
     {
         type = "recipe",
         name = "pf-nitric-acid",
-        categories = mods["space-age"] and {"organic", "chemistry"} or {"chemistry"},
+        categories = mods["space-age"] and { "organic", "chemistry" } or { "chemistry" },
         subgroup = "fluid-recipes",
         order = "c[oil-products]-c",
         ingredients = {
-            {type="item", name="copper-plate", amount=1},
-            {type="item", name="stone", amount=2},
-            {type="fluid", name="sulfuric-acid", amount=10},
-            {type="fluid", name="water", amount=100}
+            { type = "item",  name = "copper-plate",  amount = 1 },
+            { type = "item",  name = "stone",         amount = 2 },
+            { type = "fluid", name = "sulfuric-acid", amount = 10 },
+            { type = "fluid", name = "water",         amount = 100 }
         },
         results = {
-            {type="fluid", name="nitric-acid", amount=100}
+            { type = "fluid", name = "nitric-acid", amount = 100 }
         },
         auto_recycle = false,
         energy_required = 2,
         allow_productivity = true,
         enabled = false,
         crafting_machine_tint = {
-            primary = {0.5, 0.75, 1, 1},
-            secondary = {1, 1, 1, 1},
-            tertiary = {0.25, 0.5, 1, 1},
-            quaternary = {1, 1, 1, 1}
-          }
+            primary = { 0.5, 0.75, 1, 1 },
+            secondary = { 1, 1, 1, 1 },
+            tertiary = { 0.25, 0.5, 1, 1 },
+            quaternary = { 1, 1, 1, 1 }
+        }
     },
     {
         type = "recipe",
         name = "depleted-acid-reprocessing",
-        categories = {"chemistry"},
+        categories = { "chemistry" },
         icon = "__ThemTharHillsMk2__/graphics/icons/depleted-acid.png",
         icon_size = 64,
         subgroup = "fluid-recipes",
         order = "c[oil-products]-d",
         ingredients = {
-            {type="fluid", name="depleted-acid", amount=150},
-            {type="fluid", name="water", amount=50}
+            { type = "fluid", name = "depleted-acid", amount = 150 },
+            { type = "fluid", name = "water",         amount = 50 }
         },
         results = {
-            {type="item", name="gold-powder", amount=1}
+            { type = "item", name = "gold-powder", amount = 1 }
         },
         auto_recycle = false,
         energy_required = 5,
         allow_productivity = true,
         enabled = false,
         crafting_machine_tint = {
-            primary = {0, 0.6, 0.8, 1},
-            secondary = {0, 1, 1, 1},
-            tertiary = {0.5, 1, 1, 1},
-            quaternary = {0.4, 0.4, 0.8, 1}
-          }
+            primary = { 0, 0.6, 0.8, 1 },
+            secondary = { 0, 1, 1, 1 },
+            tertiary = { 0.5, 1, 1, 1 },
+            quaternary = { 0.4, 0.4, 0.8, 1 }
+        }
     },
     {
         type = "recipe",
         name = "gold-powder",
-        categories = mods["space-age"] and {"chemistry", "metallurgy"} or {"chemistry"},
+        categories = mods["space-age"] and { "chemistry", "metallurgy" } or { "chemistry" },
         ingredients = {
-            {type="item", name="gold-ore", amount=1},
-            {type="fluid", name="nitric-acid", amount=10}
+            { type = "item",  name = "gold-ore",    amount = 1 },
+            { type = "fluid", name = "nitric-acid", amount = 10 }
         },
         results = {
-            {type="item", name="gold-powder", amount=2},
-            {type="fluid", name="depleted-acid", amount=10},
+            { type = "item",  name = "gold-powder",   amount = 2 },
+            { type = "fluid", name = "depleted-acid", amount = 10 },
         },
         auto_recycle = false,
         main_product = "gold-powder",
@@ -74,36 +74,36 @@ data:extend({
         allow_productivity = true,
         enabled = false,
         crafting_machine_tint = {
-            primary = {0.75, 0.7, 0, 1},
-            secondary = {1, 0.95, 0, 1},
-            tertiary = {0.5, 0.5, 1, 1},
-            quaternary = {1, 1, 1, 1}
+            primary = { 0.75, 0.7, 0, 1 },
+            secondary = { 1, 0.95, 0, 1 },
+            tertiary = { 0.5, 0.5, 1, 1 },
+            quaternary = { 1, 1, 1, 1 }
         }
     },
     {
         type = "recipe",
         name = "trace-metals-from-copper",
-        categories = mods["space-age"] and {"chemistry", "metallurgy"} or {"chemistry"},
+        categories = mods["space-age"] and { "chemistry", "metallurgy" } or { "chemistry" },
         icons = {
             {
-              icon = "__ThemTharHillsMk2__/graphics/icons/gold-powder.png",
-              icon_size = 64
+                icon = "__ThemTharHillsMk2__/graphics/icons/gold-powder.png",
+                icon_size = 64
             },
             {
-              icon = "__base__/graphics/icons/copper-ore.png",
-              icon_size = 64,
-              icon_mipmaps = 4,
-              scale = 0.25,
-              shift = {-8, -8}
+                icon = "__base__/graphics/icons/copper-ore.png",
+                icon_size = 64,
+                icon_mipmaps = 4,
+                scale = 0.25,
+                shift = { -8, -8 }
             }
-          },
+        },
         ingredients = {
-            {type="item", name="copper-ore", amount=3},
-            {type="fluid", name="nitric-acid", amount=30}
+            { type = "item",  name = "copper-ore",  amount = 3 },
+            { type = "fluid", name = "nitric-acid", amount = 30 }
         },
         results = {
-            {type="item", name="gold-powder", amount=1},
-            {type="fluid", name="depleted-acid", amount=30},
+            { type = "item",  name = "gold-powder",   amount = 1 },
+            { type = "fluid", name = "depleted-acid", amount = 30 },
         },
         auto_recycle = false,
         main_product = "gold-powder",
@@ -111,21 +111,21 @@ data:extend({
         allow_productivity = true,
         enabled = false,
         crafting_machine_tint = {
-            primary = {0.75, 0.4, 0, 1},
-            secondary = {1, 0.65, 0, 1},
-            tertiary = {0.5, 0.5, 1, 1},
-            quaternary = {1, 1, 1, 1}
+            primary = { 0.75, 0.4, 0, 1 },
+            secondary = { 1, 0.65, 0, 1 },
+            tertiary = { 0.5, 0.5, 1, 1 },
+            quaternary = { 1, 1, 1, 1 }
         }
     },
     {
         type = "recipe",
         name = "gold-plate",
-        categories={"smelting"},
+        categories = { "smelting" },
         ingredients = {
-            {type="item", name="gold-powder", amount=3},
+            { type = "item", name = "gold-powder", amount = 3 },
         },
         results = {
-            {type="item", name="gold-plate", amount=1}
+            { type = "item", name = "gold-plate", amount = 1 }
         },
         auto_recycle = false,
         energy_required = 3.2,
@@ -135,36 +135,36 @@ data:extend({
     {
         type = "recipe",
         name = "gold-wire",
-        categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
+        categories = mods["space-age"] and { "crafting", "electromagnetics" } or { "crafting" },
         ingredients = {
-            {type="item", name="gold-plate", amount=1},
+            { type = "item", name = "gold-plate", amount = 1 },
         },
         results = {
-            {type="item", name="gold-wire", amount=2}
+            { type = "item", name = "gold-wire", amount = 2 }
         },
         energy_required = 0.5,
-        lasermill_vanilla = {helium = -1},
-        lasermill_dlc = {helium = -1},
+        lasermill_vanilla = { helium = -1 },
+        lasermill_dlc = { helium = -1 },
         allow_productivity = true,
         enabled = false
     },
     {
         type = "recipe",
         name = "integrated-circuit",
-        categories = mods["space-age"] and {"crafting-with-fluid", "electromagnetics"} or {"crafting-with-fluid"},
+        categories = mods["space-age"] and { "crafting-with-fluid", "electromagnetics" } or { "crafting-with-fluid" },
         ingredients = {
-            {type="item", name="gold-plate", amount=2},
-            {type="item", name="copper-plate", amount=2},
-            {type="item", name="plastic-bar", amount=1},
-            {type="fluid", name="sulfuric-acid", amount=1},
+            { type = "item",  name = "gold-plate",    amount = 2 },
+            { type = "item",  name = "copper-plate",  amount = 2 },
+            { type = "item",  name = "plastic-bar",   amount = 1 },
+            { type = "fluid", name = "sulfuric-acid", amount = 1 },
         },
         results = {
-            {type="item", name="integrated-circuit", amount=2},
-            {type="fluid", name="depleted-acid", amount=1}
+            { type = "item",  name = "integrated-circuit", amount = 2 },
+            { type = "fluid", name = "depleted-acid",      amount = 1 }
         },
         main_product = "integrated-circuit",
-        lasermill_vanilla = {helium = misc.difficulty == 3 and -0.4 or -1, convert = (misc.difficulty == 3 and not mods["LunarLandings"]), unlock="processing-unit"},
-        lasermill_dlc = {helium = -1},
+        lasermill_vanilla = { helium = misc.difficulty == 3 and -0.4 or -1, convert = (misc.difficulty == 3 and not mods["LunarLandings"]), unlock = "processing-unit" },
+        lasermill_dlc = { helium = -1 },
         energy_required = 1,
         allow_productivity = true,
         enabled = false
@@ -180,19 +180,19 @@ if mods["LunarLandings"] then
             {
                 type = "recipe",
                 name = "cheese-ore-processing",
-                categories={"ll-electric-smelting"},
+                categories = { "ll-electric-smelting" },
                 subgroup = "ll-raw-material-moon",
                 order = "a[moon-rock]-d",
                 icon = "__BrassTacksMk2__/graphics/icons/cheese-ore.png",
                 icon_size = 64,
                 energy_required = 10,
                 ingredients = {
-                    {type="item", name="cheese-ore", amount=20}
+                    { type = "item", name = "cheese-ore", amount = 20 }
                 },
                 results = {
-                    {type="item", name="gold-ore", amount=10},
-                    {type="item", name="ll-moon-rock", amount=3},
-                    {type="fluid", name="light-oil", amount=10, fluidbox_index = 1}
+                    { type = "item",  name = "gold-ore",     amount = 10 },
+                    { type = "item",  name = "ll-moon-rock", amount = 3 },
+                    { type = "fluid", name = "light-oil",    amount = 10, fluidbox_index = 1 }
                 },
                 auto_recycle = false,
                 always_show_products = true,
@@ -205,7 +205,7 @@ if mods["LunarLandings"] then
             {
                 type = "recipe",
                 name = "vulcanus-silica",
-                categories={"metallurgy"},
+                categories = { "metallurgy" },
                 subgroup = "ll-raw-material-moon",
                 order = "a[silica]-b",
                 icon = "__LunarLandings__/graphics/icons/silica.png",
@@ -213,12 +213,12 @@ if mods["LunarLandings"] then
                 energy_required = 5,
                 auto_recycle = false,
                 ingredients = {
-                    {type="item", name="stone", amount=20},
-                    {type="item", name="calcite", amount=2},
-                    {type="fluid", name="lava", amount=100}
+                    { type = "item",  name = "stone",   amount = 20 },
+                    { type = "item",  name = "calcite", amount = 2 },
+                    { type = "fluid", name = "lava",    amount = 100 }
                 },
                 results = {
-                    {type="item", name="ll-silica", amount=1}
+                    { type = "item", name = "ll-silica", amount = 1 }
                 },
                 enabled = false
             }
@@ -229,43 +229,43 @@ end
 if mods["LunarLandings"] then
     data:extend({
         {
-        type = "recipe",
-        name = "astral-acid-recovery",
-        categories={"chemistry"},
-        icons = {
-            {
-                icon = "__ThemTharHillsMk2__/graphics/icons/depleted-acid.png",
-                icon_size = 64
+            type = "recipe",
+            name = "astral-acid-recovery",
+            categories = { "chemistry" },
+            icons = {
+                {
+                    icon = "__ThemTharHillsMk2__/graphics/icons/depleted-acid.png",
+                    icon_size = 64
+                },
+                {
+                    icon = "__LunarLandings__/graphics/fluid/astroflux.png",
+                    icon_size = 64,
+                    icon_mipmaps = 4,
+                    scale = 0.33
+                }
             },
-            {
-                icon = "__LunarLandings__/graphics/fluid/astroflux.png",
-                icon_size = 64,
-                icon_mipmaps = 4,
-                scale = 0.33
-            }
-        },
-        icon_size = 64,
-        subgroup = "fluid-recipes",
-        order = "c[oil-products]-da",
-        energy_required = 10,
-        auto_recycle = false,
-        allow_decomposition = false,
-        allow_productivity = true,
-        ingredients = {
-            {type="fluid", name="depleted-acid", amount=600},
-            {type="fluid", name="ll-astroflux", amount=1}
-        },
-        results = {
-            {type="fluid", name="sulfuric-acid", amount=15},
-            {type="item", name="copper-ore", amount=1}
-        },
-        crafting_machine_tint = {
-            primary = {0, 1, 1, 1},
-            secondary = {0.5, 0, 1, 1},
-            tertiary = {0, 1, 1, 1},
-            quaternary = {0.3, 0, 0.75, 1}
-        },
-        enabled = false
+            icon_size = 64,
+            subgroup = "fluid-recipes",
+            order = "c[oil-products]-da",
+            energy_required = 10,
+            auto_recycle = false,
+            allow_decomposition = false,
+            allow_productivity = true,
+            ingredients = {
+                { type = "fluid", name = "depleted-acid", amount = 600 },
+                { type = "fluid", name = "ll-astroflux",  amount = 1 }
+            },
+            results = {
+                { type = "fluid", name = "sulfuric-acid", amount = 15 },
+                { type = "item",  name = "copper-ore",    amount = 1 }
+            },
+            crafting_machine_tint = {
+                primary = { 0, 1, 1, 1 },
+                secondary = { 0.5, 0, 1, 1 },
+                tertiary = { 0, 1, 1, 1 },
+                quaternary = { 0.3, 0, 0.75, 1 }
+            },
+            enabled = false
         }
     })
 end
@@ -276,80 +276,80 @@ if mods["space-age"] then
             {
                 type = "recipe",
                 name = "neural-bioculture",
-                categories={"organic"},
+                categories = { "organic" },
                 ingredients = {
-                    {type="item", name="stem-cells", amount=4},
-                    {type="item", name="philosophers-hormone", amount=1}
+                    { type = "item", name = "stem-cells",           amount = 4 },
+                    { type = "item", name = "philosophers-hormone", amount = 1 }
                 },
                 results = {
-                    {type="item", name="neural-bioculture", amount=4}
+                    { type = "item", name = "neural-bioculture", amount = 4 }
                 },
                 auto_recycle = false,
                 energy_required = 2,
                 allow_productivity = true,
                 enabled = false,
                 crafting_machine_tint = {
-                    primary = {1, 1, 0, 1},
-                    secondary = {0.8, 0.8, 0.4, 1}
+                    primary = { 1, 1, 0, 1 },
+                    secondary = { 0.8, 0.8, 0.4, 1 }
                 }
-            }    
+            }
         })
     else
         data:extend({
             {
                 type = "recipe",
                 name = "neural-bioculture",
-                categories={"organic"},
+                categories = { "organic" },
                 ingredients = {
-                    {type="item", name="pentapod-egg", amount=1},
+                    { type = "item", name = "pentapod-egg", amount = 1 },
                 },
                 results = {
-                    {type="item", name="neural-bioculture", amount=8}
+                    { type = "item", name = "neural-bioculture", amount = 8 }
                 },
                 auto_recycle = false,
                 energy_required = 4,
                 allow_productivity = true,
                 enabled = false,
                 crafting_machine_tint = {
-                    primary = {1, 1, 0, 1},
-                    secondary = {0.8, 0.8, 0.4, 1}
+                    primary = { 1, 1, 0, 1 },
+                    secondary = { 0.8, 0.8, 0.4, 1 }
                 }
-            }    
+            }
         })
     end
 
     if 1 == 2 then
-        data.raw.item["gold-plate"].localised_description = {"recipe-description.hint-nonstandard-recycling"}
+        data.raw.item["gold-plate"].localised_description = { "recipe-description.hint-nonstandard-recycling" }
 
         data:extend({
             {
                 type = "recipe",
                 name = "gold-plate-recycling",
-                localised_name = {"recipe-name.recycling", {"item-name.gold-plate"}},
+                localised_name = { "recipe-name.recycling", { "item-name.gold-plate" } },
                 icons = {
-                          {
-                            icon = "__recycler__/graphics/icons/recycling.png",
-                            icon_size = 64
-                          },
-                          {
-                            icon = "__ThemTharHillsMk2__/graphics/icons/gold-plate.png",
-                            icon_size = 64,
-                            scale = 0.33
-                          },
-                          {
-                            icon = "__recycler__/graphics/icons/recycling-top.png",
-                            icon_size = 64
-                          }
+                    {
+                        icon = "__recycler__/graphics/icons/recycling.png",
+                        icon_size = 64
+                    },
+                    {
+                        icon = "__ThemTharHillsMk2__/graphics/icons/gold-plate.png",
+                        icon_size = 64,
+                        scale = 0.33
+                    },
+                    {
+                        icon = "__recycler__/graphics/icons/recycling-top.png",
+                        icon_size = 64
+                    }
                 },
-                categories={"recycling"},
+                categories = { "recycling" },
                 ingredients = {
-                    {type="item", name="gold-plate", amount=1}
+                    { type = "item", name = "gold-plate", amount = 1 }
                 },
                 results = {
-                    {type="item", name="gold-powder", amount=1, independent_probability = 0.18}
+                    { type = "item", name = "gold-powder", amount = 1, independent_probability = 0.18 }
                 },
                 bespoke = "gold-plate",
-                energy_required = 6.4/16,
+                energy_required = 6.4 / 16,
                 allow_productivity = false,
                 enabled = true,
                 hidden = true,
@@ -363,7 +363,7 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "neural-microchip",
-            categories={"crafting", "electromagnetics"},
+            categories = { "crafting", "electromagnetics" },
             icons = {
                 {
                     icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
@@ -373,28 +373,27 @@ if mods["space-age"] then
                     icon = "__ThemTharHillsMk2__/graphics/icons/neural-bioculture.png",
                     icon_size = 64,
                     scale = 0.25,
-                    shift = {8, 8}
+                    shift = { 8, 8 }
                 },
             },
             ingredients = {
-                {type="item", name="neural-bioculture", amount=2},
-                {type="item", name="copper-plate", amount=2},
-                {type="item", name="plastic-bar", amount=1}
+                { type = "item", name = "neural-bioculture", amount = 2 },
+                { type = "item", name = "copper-plate",      amount = 2 },
+                { type = "item", name = "plastic-bar",       amount = 1 }
             },
             results = {
-                {type="item", name="integrated-circuit", amount=2}
+                { type = "item", name = "integrated-circuit", amount = 2 }
             },
             auto_recycle = false,
             energy_required = 1,
-            lasermill_dlc = {helium = -1, unlock="neural-electronics"},
+            lasermill_dlc = { helium = -1, unlock = "neural-electronics" },
             allow_productivity = true,
-            auto_recycle = false,
             enabled = false
         },
         {
             type = "recipe",
             name = "neural-conductor",
-            categories={"electromagnetics"},
+            categories = { "electromagnetics" },
             icons = {
                 {
                     icon = "__base__/graphics/icons/copper-cable.png",
@@ -405,14 +404,14 @@ if mods["space-age"] then
                     icon = "__ThemTharHillsMk2__/graphics/icons/neural-bioculture.png",
                     icon_size = 64,
                     scale = 0.25,
-                    shift = {8, 8}
+                    shift = { 8, 8 }
                 },
             },
             ingredients = {
-                {type="item", name="neural-bioculture", amount=1}
+                { type = "item", name = "neural-bioculture", amount = 1 }
             },
             results = {
-                {type="item", name="copper-cable", amount_min=1, amount_max=4}
+                { type = "item", name = "copper-cable", amount_min = 1, amount_max = 4 }
             },
             auto_recycle = false,
             energy_required = 1,
@@ -423,16 +422,16 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "molten-gold",
-            categories={"metallurgy"},
+            categories = { "metallurgy" },
             icon = "__pf-sa-compat__/graphics/icons/gold-powder-melting.png",
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "a[melting]-e",
             ingredients = {
-                {type="item", name="gold-powder", amount=150}
+                { type = "item", name = "gold-powder", amount = 150 }
             },
             results = {
-                {type="fluid", name="molten-gold", amount=500}
+                { type = "fluid", name = "molten-gold", amount = 500 }
             },
             auto_recycle = false,
             energy_required = 8,
@@ -447,16 +446,16 @@ if mods["space-age"] then
             icon_mipmaps = 4,
             subgroup = "vulcanus-processes",
             order = "a[melting]-a[lava-e]",
-            categories={"metallurgy"},
+            categories = { "metallurgy" },
             ingredients = {
-                {type="fluid", name="lava", amount=500, fluidbox_multiplier=10},
-                {type="fluid", name="nitric-acid", amount=500, fluidbox_multiplier=10},
-                {type="item", name="calcite", amount=1}
+                { type = "fluid", name = "lava",        amount = 500, fluidbox_multiplier = 10 },
+                { type = "fluid", name = "nitric-acid", amount = 500, fluidbox_multiplier = 10 },
+                { type = "item",  name = "calcite",     amount = 1 }
             },
             results = {
-                {type="fluid", name="molten-gold", amount=250, fluidbox_multiplier=10},
-                {type="fluid", name="depleted-acid", amount=500, fluidbox_multiplier=10},
-                {type="item", name="stone", amount=15},
+                { type = "fluid", name = "molten-gold",   amount = 250, fluidbox_multiplier = 10 },
+                { type = "fluid", name = "depleted-acid", amount = 500, fluidbox_multiplier = 10 },
+                { type = "item",  name = "stone",         amount = 15 },
             },
             auto_recycle = false,
             energy_required = 16,
@@ -466,16 +465,16 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "casting-gold",
-            categories={"metallurgy"},
+            categories = { "metallurgy" },
             icon = "__pf-sa-compat__/graphics/icons/casting-gold.png",
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-d",
             ingredients = {
-                {type="fluid", name="molten-gold", amount=20}
+                { type = "fluid", name = "molten-gold", amount = 20 }
             },
             results = {
-                {type="item", name="gold-plate", amount=2}
+                { type = "item", name = "gold-plate", amount = 2 }
             },
             auto_recycle = false,
             energy_required = 3.2,
@@ -485,16 +484,16 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "casting-gold-wire",
-            categories={"metallurgy"},
+            categories = { "metallurgy" },
             icon = "__pf-sa-compat__/graphics/icons/casting-gold-wire.png",
             icon_size = 64,
             subgroup = "vulcanus-processes",
             order = "b[casting]-i",
             ingredients = {
-                {type="fluid", name="molten-gold", amount=5}
+                { type = "fluid", name = "molten-gold", amount = 5 }
             },
             results = {
-                {type="item", name="gold-wire", amount=2}
+                { type = "item", name = "gold-wire", amount = 2 }
             },
             auto_recycle = false,
             energy_required = 1,
@@ -504,65 +503,65 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "depleted-acid-reprocessing-with-calcite",
-            categories={"chemistry"},
+            categories = { "chemistry" },
             subgroup = "fluid-recipes",
             icons = {
                 {
                     icon = "__ThemTharHillsMk2__/graphics/icons/depleted-acid.png",
-                    icon_size = 64,        
+                    icon_size = 64,
                 },
                 {
                     icon = "__space-age__/graphics/icons/calcite.png",
                     icon_size = 64,
                     icon_mipmaps = 4,
                     scale = 0.33,
-                    shift = {0, 4}
+                    shift = { 0, 4 }
                 }
             },
             order = "c[oil-products]-d",
             ingredients = {
-                {type="fluid", name="depleted-acid", amount=1500},
-                {type="fluid", name="water", amount=100},
-                {type="item", name="calcite", amount=1}
+                { type = "fluid", name = "depleted-acid", amount = 1500 },
+                { type = "fluid", name = "water",         amount = 100 },
+                { type = "item",  name = "calcite",       amount = 1 }
             },
             results = {
-                {type="item", name="gold-powder", amount=30},
-                {type="item", name="copper-ore", amount=2}
+                { type = "item", name = "gold-powder", amount = 30 },
+                { type = "item", name = "copper-ore",  amount = 2 }
             },
             auto_recycle = false,
             energy_required = 100,
             allow_productivity = true,
             enabled = false,
             crafting_machine_tint = {
-                primary = {0, 0.6, 0.8, 1},
-                secondary = {0, 1, 1, 1},
-                tertiary = {0.5, 1, 1, 1},
-                quaternary = {0.4, 0.4, 0.8, 1}
-              }
+                primary = { 0, 0.6, 0.8, 1 },
+                secondary = { 0, 1, 1, 1 },
+                tertiary = { 0.5, 1, 1, 1 },
+                quaternary = { 0.4, 0.4, 0.8, 1 }
+            }
         },
         {
             type = "recipe",
             name = "holmium-wire",
-            categories = data.raw["recipe-category"]["electroplating"] and {"electroplating"} or {"electromagnetics"},
+            categories = data.raw["recipe-category"]["electroplating"] and { "electroplating" } or { "electromagnetics" },
             icons = {
                 {
                     icon = "__ThemTharHillsMk2__/graphics/icons/gold-wire.png",
-                    icon_size = 64,        
+                    icon_size = 64,
                 },
                 {
                     icon = "__space-age__/graphics/icons/fluid/electrolyte.png",
                     icon_size = 64,
                     icon_mipmaps = 4,
                     scale = 0.25,
-                    shift = {8, 8}
+                    shift = { 8, 8 }
                 }
             },
             ingredients = {
-                {type="fluid", name="electrolyte", amount=5},
-                {type="item", name="copper-cable", amount=40}
+                { type = "fluid", name = "electrolyte",  amount = 5 },
+                { type = "item",  name = "copper-cable", amount = 40 }
             },
             results = {
-                {type="item", name="gold-wire", amount=data.raw["recipe-category"]["electroplating"] and 8 or 10}
+                { type = "item", name = "gold-wire", amount = data.raw["recipe-category"]["electroplating"] and 8 or 10 }
             },
             auto_recycle = false,
             energy_required = 2.5,
@@ -572,28 +571,28 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "holmium-microchip",
-            categories={"electromagnetics"},
+            categories = { "electromagnetics" },
             icons = {
                 {
                     icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
-                    icon_size = 64,        
+                    icon_size = 64,
                 },
                 {
                     icon = "__space-age__/graphics/icons/fluid/electrolyte.png",
                     icon_size = 64,
                     icon_mipmaps = 4,
                     scale = 0.25,
-                    shift = {8, 8}
+                    shift = { 8, 8 }
                 }
             },
             ingredients = {
-                {type="fluid", name="sulfuric-acid", amount=2},
-                {type="fluid", name="electrolyte", amount=2},
-                {type="item", name="electronic-circuit", amount=2}
+                { type = "fluid", name = "sulfuric-acid",      amount = 2 },
+                { type = "fluid", name = "electrolyte",        amount = 2 },
+                { type = "item",  name = "electronic-circuit", amount = 2 }
             },
             results = {
-                {type="item", name="integrated-circuit", amount=1},
-                {type="fluid", name="depleted-acid", amount=2}
+                { type = "item",  name = "integrated-circuit", amount = 1 },
+                { type = "fluid", name = "depleted-acid",      amount = 2 }
             },
             auto_recycle = false,
             energy_required = 1,
@@ -610,7 +609,7 @@ if mods["space-age"] then
             {
                 type = "recipe",
                 name = "integrated-circuits-from-nitric-acid",
-                categories={"cryogenics", "electromagnetics"},
+                categories = { "cryogenics", "electromagnetics" },
                 icons = {
                     {
                         icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
@@ -620,24 +619,24 @@ if mods["space-age"] then
                         icon = "__Cerys-Moon-of-Fulgora__/graphics/icons/nitric-acid.png",
                         icon_size = 64,
                         scale = 0.25,
-                        shift = {-8, -8}
+                        shift = { -8, -8 }
                     }
                 },
                 ingredients = {
-                    {type="item", name="gold-plate", amount=2},
-                    {type="item", name="copper-plate", amount=2},
-                    {type="item", name="plastic-bar", amount=1},
-                    {type="fluid", name="nitric-acid", amount=1},
+                    { type = "item",  name = "gold-plate",   amount = 2 },
+                    { type = "item",  name = "copper-plate", amount = 2 },
+                    { type = "item",  name = "plastic-bar",  amount = 1 },
+                    { type = "fluid", name = "nitric-acid",  amount = 1 },
                 },
                 results = {
-                    {type="item", name="integrated-circuit", amount=2},
-                    {type="fluid", name="depleted-acid", amount=1}
+                    { type = "item",  name = "integrated-circuit", amount = 2 },
+                    { type = "fluid", name = "depleted-acid",      amount = 1 }
                 },
                 auto_recycle = false,
                 subgroup = "cerys-processes",
                 order = "d-ca",
                 main_product = "integrated-circuit",
-                lasermill_dlc = {helium = -1, unlock=mods["Paracelsin"] and {"electrochemical-plant", "cerys-fulgoran-cryogenics"} or "cerys-fulgoran-cryogenics", icon_offset={8, -8}},
+                lasermill_dlc = { helium = -1, unlock = mods["Paracelsin"] and { "electrochemical-plant", "cerys-fulgoran-cryogenics" } or "cerys-fulgoran-cryogenics", icon_offset = { 8, -8 } },
                 energy_required = 1,
                 allow_productivity = true,
                 enabled = false
@@ -648,7 +647,7 @@ if mods["space-age"] then
             {
                 type = "recipe",
                 name = "integrated-circuits-from-nitric-acid",
-                categories={"electrochemistry", "electromagnetics"},
+                categories = { "electrochemistry", "electromagnetics" },
                 icons = {
                     {
                         icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
@@ -658,24 +657,24 @@ if mods["space-age"] then
                         icon = "__Paracelsin-Graphics__/graphics/icons/nitric-acid.png",
                         icon_size = 64,
                         scale = 0.25,
-                        shift = {-8, -8}
+                        shift = { -8, -8 }
                     }
                 },
                 ingredients = {
-                    {type="item", name="gold-wire", amount=6},
-                    {type="item", name="zinc-solder", amount=2},
-                    {type="item", name="plastic-bar", amount=1},
-                    {type="fluid", name="nitric-acid", amount=1},
+                    { type = "item",  name = "gold-wire",   amount = 6 },
+                    { type = "item",  name = "zinc-solder", amount = 2 },
+                    { type = "item",  name = "plastic-bar", amount = 1 },
+                    { type = "fluid", name = "nitric-acid", amount = 1 },
                 },
                 results = {
-                    {type="item", name="integrated-circuit", amount=2},
-                    {type="fluid", name="depleted-acid", amount=1}
+                    { type = "item",  name = "integrated-circuit", amount = 2 },
+                    { type = "fluid", name = "depleted-acid",      amount = 1 }
                 },
                 auto_recycle = false,
                 subgroup = "nitric-acid-and-nitrogen",
                 order = "fa",
                 main_product = "integrated-circuit",
-                lasermill_dlc = {helium = -1, unlock={"electrochemical-plant"}, icon_offset={8, -8}},
+                lasermill_dlc = { helium = -1, unlock = { "electrochemical-plant" }, icon_offset = { 8, -8 } },
                 energy_required = 1,
                 allow_productivity = true,
                 enabled = false
@@ -688,29 +687,29 @@ if mods["space-age"] then
             {
                 type = "recipe",
                 name = "integrated-circuit-battlefield-data",
-                categories={"electronics"},
+                categories = { "electronics" },
                 icons = {
                     {
                         icon = "__ThemTharHillsMk2__/graphics/icons/integrated-circuit.png",
                         icon_size = 64,
                         scale = 0.7,
-                        shift = {0, -10}
+                        shift = { 0, -10 }
                     },
                     {
                         icon = "__castra__/graphics/icons/castra-data.png",
                         icon_size = 64,
                         scale = 0.5,
-                        shift = {-10, 10}
+                        shift = { -10, 10 }
                     }
                 },
                 ingredients = {
-                    {type="item", name="plastic-bar", amount=4},
-                    {type="fluid", name="sulfuric-acid", amount=10},
-                    {type="item", name="castra-data", amount=1},
+                    { type = "item",  name = "plastic-bar",   amount = 4 },
+                    { type = "fluid", name = "sulfuric-acid", amount = 10 },
+                    { type = "item",  name = "castra-data",   amount = 1 },
                 },
                 results = {
-                    {type="item", name="integrated-circuit", amount=8},
-                    {type="fluid", name="depleted-acid", amount=10}
+                    { type = "item",  name = "integrated-circuit", amount = 8 },
+                    { type = "fluid", name = "depleted-acid",      amount = 10 }
                 },
                 auto_recycle = false,
                 subgroup = "castra-processes",
@@ -725,85 +724,85 @@ if mods["space-age"] then
 end
 
 if tune_up_data then
-  if not mods["space-age"] then
-    tune_up_data.recipes["gold-ore"] = {
-        categories={"purification"},
-        count = 5,
-        energy_required = 1,
-        ingredients = {{{"gold-ore", 5}, {"stone", 1}, {"nitric-acid", 50}}}
+    if not mods["space-age"] then
+        tune_up_data.recipes["gold-ore"] = {
+            categories = { "purification" },
+            count = 5,
+            energy_required = 1,
+            ingredients = { { { "gold-ore", 5 }, { "stone", 1 }, { "nitric-acid", 50 } } }
+        }
+    end
+
+    tune_up_data.recipes["gold-plate"] = {
+        categories = { "purification" },
+        count = 10,
+        energy_required = 10,
+        ingredients = { { { "gold-plate", 5 }, { "nitric-acid", 100 }, { "calcite", 1 } }, { { "stone", 1 }, { "gold-ore", 5 } } }
     }
-  end
 
-  tune_up_data.recipes["gold-plate"] = {
-    categories={"purification"},
-    count = 10,
-    energy_required = 10,
-    ingredients = {{{"gold-plate", 5}, {"nitric-acid", 100}, {"calcite", 1}}, {{"stone", 1}, {"gold-ore", 5}}}
-  }
+    tune_up_data.recipes["gold-powder"] = {
+        categories = { "purification" },
+        count = 30,
+        energy_required = 10,
+        ingredients = { { { "gold-powder", 5 }, { "nitric-acid", 100 }, { "copper-ore", 1 } }, { { "stone", 1 }, { "gold-powder", 15 } } }
+    }
 
-  tune_up_data.recipes["gold-powder"] = {
-    categories={"purification"},
-    count = 30,
-    energy_required = 10,
-    ingredients = {{{"gold-powder", 5}, {"nitric-acid", 100}, {"copper-ore", 1}}, {{"stone", 1}, {"gold-powder", 15}}}
-  }
+    tune_up_data.recipes["gold-wire"] = {
+        categories = { "tuning-up" },
+        count = 4,
+        energy_required = 1,
+        ingredients = { { { "rubber", 1 }, { "gold-wire", 1 } }, { { "plastic-bar", 1 }, { "gold-wire", 1 } } }
+    }
 
-  tune_up_data.recipes["gold-wire"] = {
-    categories={"tuning-up"},
-    count = 4,
-    energy_required = 1,
-    ingredients = {{{"rubber", 1}, {"gold-wire", 1}}, {{"plastic-bar", 1}, {"gold-wire", 1}}}
-  }
+    tune_up_data.recipes["integrated-circuit"] = {
+        categories = { "tuning-up" },
+        count = 5,
+        energy_required = 5,
+        ingredients = { { { "holmium-plate", 1 } }, { { "electronic-circuit", 2 }, { "gold-wire", 2 } } }
+    }
 
-  tune_up_data.recipes["integrated-circuit"] = {
-    categories={"tuning-up"},
-    count = 5,
-    energy_required = 5,
-    ingredients = {{{"holmium-plate", 1}}, {{"electronic-circuit", 2}, {"gold-wire", 2}}}
-  }
+    tune_up_data.recipes["neural-bioculture"] = {
+        categories = { "purification" },
+        count = 3,
+        energy_required = 1,
+        ingredients = { { { "nutrients", 1 }, { "electrolyte", 1 } } }
+    }
 
-  tune_up_data.recipes["neural-bioculture"] = {
-    categories={"purification"},
-    count = 3,
-    energy_required = 1,
-    ingredients = {{{"nutrients", 1}, {"electrolyte", 1}}}
-  }
+    tune_up_data.recipes["transceiver"] = {
+        categories = { "tuning-up" },
+        count = 1,
+        energy_required = 2,
+        ingredients = { { { "advanced-circuit", 1 } } }
+    }
 
-  tune_up_data.recipes["transceiver"] = {
-    categories={"tuning-up"},
-    count = 1,
-    energy_required = 2,
-    ingredients = {{{"advanced-circuit", 1}}}
-  }
+    tune_up_data.recipes["heavy-cable"] = {
+        categories = { "tuning-up" },
+        count = 1,
+        energy_required = 2,
+        surface_conditions = { { property = "magnetic-field", min = 99 } },
+        ingredients = { { { "superconductor", 1 } } }
+    }
 
-  tune_up_data.recipes["heavy-cable"] = {
-    categories={"tuning-up"},
-    count = 1,
-    energy_required = 2,
-    surface_conditions = {{property="magnetic-field", min=99}},
-    ingredients = {{{"superconductor", 1}}}
-  }
+    tune_up_data.recipes["stepper-motor"] = {
+        categories = { "tuning-up" },
+        count = 1,
+        energy_required = 2,
+        ingredients = { { { "superconductor", 1 }, { "iron-gear-wheel", 1 } }, { { "integrated-circuit", 1 }, { "iron-gear-wheel", 1 } } }
+    }
 
-  tune_up_data.recipes["stepper-motor"] = {
-    categories={"tuning-up"},
-    count = 1,
-    energy_required = 2,
-    ingredients = {{{"superconductor", 1}, {"iron-gear-wheel", 1}}, {{"integrated-circuit", 1}, {"iron-gear-wheel", 1}}}
-  }
+    tune_up_data.recipes["semiboloid-stator"] = {
+        categories = { "tuning-up" },
+        count = 1,
+        energy_required = 1,
+        ingredients = { { { "electromagnetic-coil", 1 }, { "gold-wire", 1 } }, { { "gold-wire", 3 } } }
+    }
 
-  tune_up_data.recipes["semiboloid-stator"] = {
-    categories={"tuning-up"},
-    count = 1,
-    energy_required = 1,
-    ingredients = {{{"electromagnetic-coil", 1}, {"gold-wire", 1}}, {{"gold-wire", 3}}}
-  }
-
-  tune_up_data.recipes["hydrocoptic-marzelvane"] = {
-    categories={"tuning-up"},
-    count = 1,
-    energy_required = 1,
-    ingredients = {{{"semiboloid-stator", 4}, {mods["maraxsis"] and "maraxsis-glass-panes" or "fluoroketone-cold", mods["maraxsis"] and 1 or 20}, {mods["BrassTacksMk2"] and "bearing" or "iron-gear-wheel", 2}}}
-  }
+    tune_up_data.recipes["hydrocoptic-marzelvane"] = {
+        categories = { "tuning-up" },
+        count = 1,
+        energy_required = 1,
+        ingredients = { { { "semiboloid-stator", 4 }, { mods["maraxsis"] and "maraxsis-glass-panes" or "fluoroketone-cold", mods["maraxsis"] and 1 or 20 }, { mods["BrassTacksMk2"] and "bearing" or "iron-gear-wheel", 2 } } }
+    }
 end
 
 if misc.difficulty == 1 then
@@ -814,51 +813,51 @@ data:extend({
     {
         type = "recipe",
         name = "stepper-motor",
-        categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
+        categories = mods["space-age"] and { "crafting", "electromagnetics" } or { "crafting" },
         ingredients = {
-            {type="item", name="gold-wire", amount=6},
-            {type="item", name="iron-gear-wheel", amount=1},
-            {type="item", name="copper-plate", amount=1}
+            { type = "item", name = "gold-wire",       amount = 6 },
+            { type = "item", name = "iron-gear-wheel", amount = 1 },
+            { type = "item", name = "copper-plate",    amount = 1 }
         },
         results = {
-            {type="item", name="stepper-motor", amount=1}
+            { type = "item", name = "stepper-motor", amount = 1 }
         },
         energy_required = 2,
-        lasermill_dlc = {helium = -1},
+        lasermill_dlc = { helium = -1 },
         allow_productivity = true,
         enabled = false
     },
     {
         type = "recipe",
         name = "transceiver",
-        categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
+        categories = mods["space-age"] and { "crafting", "electromagnetics" } or { "crafting" },
         ingredients = {
-            {type="item", name="gold-wire", amount=6},
-            {type="item", name="iron-stick", amount=1},
-            {type="item", name="electronic-circuit", amount=3}
+            { type = "item", name = "gold-wire",          amount = misc.difficulty == 3 and 10 or 6 },
+            { type = "item", name = "iron-stick",         amount = 1 },
+            { type = "item", name = "electronic-circuit", amount = 3 }
         },
         results = {
-            {type="item", name="transceiver", amount=1}
+            { type = "item", name = "transceiver", amount = 1 }
         },
         energy_required = 3,
-        lasermill_dlc = {helium = -1},
+        lasermill_dlc = { helium = -1 },
         allow_productivity = true,
         enabled = false
     },
     {
         type = "recipe",
         name = "heavy-cable",
-        categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
+        categories = mods["space-age"] and { "crafting", "electromagnetics" } or { "crafting" },
         ingredients = {
-            {type="item", name="gold-wire", amount=6},
-            {type="item", name="copper-cable", amount=1},
-            {type="item", name="plastic-bar", amount=3}
+            { type = "item", name = "gold-wire",    amount = 6 },
+            { type = "item", name = "copper-cable", amount = 1 },
+            { type = "item", name = "plastic-bar",  amount = 3 }
         },
         results = {
-            {type="item", name="heavy-cable", amount=1}
+            { type = "item", name = "heavy-cable", amount = 1 }
         },
         energy_required = 3,
-        lasermill_dlc = {helium = -1},
+        lasermill_dlc = { helium = -1 },
         allow_productivity = true,
         enabled = false
     }
@@ -867,36 +866,36 @@ data:extend({
 if mods["LunarLandings"] then
     data:extend({
         {
-        type = "recipe",
-        name = "entangled-transceiver",
-        categories={"ll-quantum-resonating"},
-        localised_name = { "recipe-name.entangled-transceiver" },
-        icons = {
-            {
-            icon = "__ThemTharHillsMk2__/graphics/icons/transceiver.png",
-            icon_size = 64
+            type = "recipe",
+            name = "entangled-transceiver",
+            categories = { "ll-quantum-resonating" },
+            localised_name = { "recipe-name.entangled-transceiver" },
+            icons = {
+                {
+                    icon = "__ThemTharHillsMk2__/graphics/icons/transceiver.png",
+                    icon_size = 64
+                },
+                {
+                    icon = "__LunarLandings__/graphics/icons/polariton/polariton.png",
+                    icon_size = 64,
+                    scale = 0.25,
+                    shift = { -8, -8 }
+                }
             },
-            {
-            icon = "__LunarLandings__/graphics/icons/polariton/polariton.png",
-            icon_size = 64,
-            scale = 0.25,
-            shift = {-8, -8}
-            }
-        },
-        auto_recycle = false,
-        energy_required = 20,
-        allow_decomposition = false,
-        ingredients = {
-            {type="item", name="integrated-circuit", amount=40},
-            {type="item", name="ll-down-polariton", amount=1},
-            {type="item", name="ll-left-polariton", amount=1}
-        },
-        results = {
-            {type="item", name="transceiver", amount=40},
-            {type="item", name="ll-up-polariton", amount=2}
-        },
-        main_product = "transceiver",
-        enabled = false
+            auto_recycle = false,
+            energy_required = 20,
+            allow_decomposition = false,
+            ingredients = {
+                { type = "item", name = "integrated-circuit", amount = 40 },
+                { type = "item", name = "ll-down-polariton",  amount = 1 },
+                { type = "item", name = "ll-left-polariton",  amount = 1 }
+            },
+            results = {
+                { type = "item", name = "transceiver",     amount = 40 },
+                { type = "item", name = "ll-up-polariton", amount = 2 }
+            },
+            main_product = "transceiver",
+            enabled = false
         }
     })
 end
@@ -909,17 +908,17 @@ data:extend({
     {
         type = "recipe",
         name = "semiboloid-stator",
-        categories = mods["space-age"] and {"crafting", "electromagnetics"} or {"crafting"},
+        categories = mods["space-age"] and { "crafting", "electromagnetics" } or { "crafting" },
         ingredients = {
-            {type="item", name="gold-wire", amount=3},
-            {type="item", name="iron-gear-wheel", amount=1},
-            {type="item", name="copper-plate", amount=1}
+            { type = "item", name = "gold-wire",       amount = 3 },
+            { type = "item", name = "iron-gear-wheel", amount = 1 },
+            { type = "item", name = "copper-plate",    amount = 1 }
         },
         results = {
-            {type="item", name="semiboloid-stator", amount=1}
+            { type = "item", name = "semiboloid-stator", amount = 1 }
         },
         energy_required = 1,
-        lasermill_dlc = {helium = -1},
+        lasermill_dlc = { helium = -1 },
         allow_productivity = true,
         enabled = false
     }
@@ -932,28 +931,29 @@ if mods["space-age"] then
         {
             type = "recipe",
             name = "hydrocoptic-marzelvane",
-            categories = mods["maraxsis"] and {"maraxsis-hydro-plant", "crafting-with-fluid"} or {"cryogenics", "crafting-with-fluid"},
+            categories = mods["maraxsis"] and { "maraxsis-hydro-plant", "crafting-with-fluid" } or
+                { "cryogenics", "crafting-with-fluid" },
             ingredients = {
-                {type="item", name="stepper-motor", amount=4},
-                {type="item", name="pipe", amount=8},
-                {type="item", name=mods["maraxsis"] and "maraxsis-glass-panes" or "lithium-plate", amount=4},
-                {type="item", name="superconductor", amount=8},
-                {type="fluid", name=mods["maraxsis"] and "maraxsis-saline-water" or "fluorine", amount=50}
+                { type = "item",  name = "stepper-motor",                                                amount = 4 },
+                { type = "item",  name = "pipe",                                                         amount = 8 },
+                { type = "item",  name = mods["maraxsis"] and "maraxsis-glass-panes" or "lithium-plate", amount = 4 },
+                { type = "item",  name = "superconductor",                                               amount = 8 },
+                { type = "fluid", name = mods["maraxsis"] and "maraxsis-saline-water" or "fluorine",     amount = 50 }
             },
             results = {
-                {type="item", name="hydrocoptic-marzelvane", amount=1}
+                { type = "item", name = "hydrocoptic-marzelvane", amount = 1 }
             },
             energy_required = 20,
-            lasermill_dlc = {helium = -1, unlock=mods["maraxsis"] and "maraxsis-hydro-plant" or "cryogenic-plant"},
+            lasermill_dlc = { helium = -1, unlock = mods["maraxsis"] and "maraxsis-hydro-plant" or "cryogenic-plant" },
             allow_productivity = true,
             enabled = false,
             crafting_machine_tint = {
-                primary = {0, 0, 1, 1},
-                secondary = {0, 1, 1, 1},
-                tertiary = {0, 0, 1, 1},
-                quaternary = {1, 1, 1, 0.5}
-              }
-    
+                primary = { 0, 0, 1, 1 },
+                secondary = { 0, 1, 1, 1 },
+                tertiary = { 0, 0, 1, 1 },
+                quaternary = { 1, 1, 1, 0.5 }
+            }
+
         }
     })
 end
