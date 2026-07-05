@@ -813,7 +813,7 @@ data:extend({
     {
         type = "recipe",
         name = "stepper-motor",
-        categories = mods["space-age"] and { "crafting", "electromagnetics" } or { "crafting" },
+        categories = { "crafting" },
         ingredients = {
             { type = "item", name = "gold-wire",       amount = 6 },
             { type = "item", name = "iron-gear-wheel", amount = 1 },
