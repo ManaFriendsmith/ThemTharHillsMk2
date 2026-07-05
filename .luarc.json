@@ -1,0 +1,24 @@
+{
+  "diagnostics.globals": [
+    "data",
+    "tune_up_data",
+    "settings",
+    "storage",
+    "game",
+    "mods",
+    "defines",
+    "rendering",
+    "script",
+    "prototypes",
+    "weight",
+    "minute",
+    "second",
+    "pipecoverspictures",
+    "kg",
+    "util",
+        "deadlock",
+        "deadlock_crating",
+        "ScrapIndustry"
+  ],
+  "diagnostics.disable": ["undefined-field"]
+}
