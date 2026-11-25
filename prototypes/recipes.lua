@@ -737,28 +737,32 @@ if tune_up_data then
         categories = { "purification" },
         count = 10,
         energy_required = 10,
-        ingredients = { { { "gold-plate", 5 }, { "nitric-acid", 100 }, { "calcite", 1 } }, { { "stone", 1 }, { "gold-ore", 5 } } }
+        ingredients = { { { "gold-plate", 5 }, { "nitric-acid", 100 }, { "calcite", 1 } }, { { "stone", 1 }, { "gold-ore", 10 } } }
     }
 
     tune_up_data.recipes["gold-powder"] = {
         categories = { "purification" },
         count = 30,
         energy_required = 10,
-        ingredients = { { { "gold-powder", 5 }, { "nitric-acid", 100 }, { "copper-ore", 1 } }, { { "stone", 1 }, { "gold-powder", 15 } } }
+        ingredients = { { { "gold-powder", 15 }, { "nitric-acid", 100 }, { "calcite", 1 } }, { { "copper-ore", 1 }, { "gold-powder", 30 } } }
     }
 
     tune_up_data.recipes["gold-wire"] = {
         categories = { "tuning-up" },
         count = 4,
         energy_required = 1,
-        ingredients = { { { "rubber", 1 }, { "gold-wire", 1 } }, { { "plastic-bar", 1 }, { "gold-wire", 1 } } }
+        ingredients = { { { "rubber", 1 }, { "gold-wire", 2 } }, { { "plastic-bar", 1 }, { "gold-wire", 2 } } },
+        scrap_types = { { "electronic-scrap", 1 } },
+        scrap_yield = 0.4
     }
 
     tune_up_data.recipes["integrated-circuit"] = {
         categories = { "tuning-up" },
         count = 5,
         energy_required = 5,
-        ingredients = { { { "holmium-plate", 1 } }, { { "electronic-circuit", 2 }, { "gold-wire", 2 } } }
+        ingredients = { { { "holmium-plate", 1 } }, { { "electronic-circuit", 3 }, { "gold-wire", 5 } } },
+        scrap_types = { { "electronic-scrap", 1 } },
+        scrap_yield = 3
     }
 
     tune_up_data.recipes["neural-bioculture"] = {
@@ -772,7 +776,9 @@ if tune_up_data then
         categories = { "tuning-up" },
         count = 1,
         energy_required = 2,
-        ingredients = { { { "advanced-circuit", 1 } } }
+        ingredients = { { { "advanced-circuit", 1 }, { "battery", 2 } } },
+        scrap_types = { { "electronic-scrap", 1 } },
+        scrap_yield = 8
     }
 
     tune_up_data.recipes["heavy-cable"] = {
@@ -780,28 +786,36 @@ if tune_up_data then
         count = 1,
         energy_required = 2,
         surface_conditions = { { property = "magnetic-field", min = 99 } },
-        ingredients = { { { "superconductor", 1 } } }
+        ingredients = { { { "superconductor", 1 } }, { { "electronic-circuit", 1 }, { "plastic-bar", 2 } } },
+        scrap_types = { { "electrical-scrap", 1 } },
+        scrap_yield = 4
     }
 
     tune_up_data.recipes["stepper-motor"] = {
         categories = { "tuning-up" },
         count = 1,
         energy_required = 2,
-        ingredients = { { { "superconductor", 1 }, { "iron-gear-wheel", 1 } }, { { "integrated-circuit", 1 }, { "iron-gear-wheel", 1 } } }
+        ingredients = { { { "superconductor", 1 }, { "bearing", 1 } }, { { "superconductor", 1 }, { "iron-gear-wheel", 2 } }, { { "integrated-circuit", 1 }, { "bearing", 1 } }, { { "integrated-circuit", 1 }, { "iron-gear-wheel", 2 } } },
+        scrap_types = { { "electronic-scrap", 1 }, {"mechanical-scrap", 1} },
+        scrap_yield = 5
     }
 
     tune_up_data.recipes["semiboloid-stator"] = {
         categories = { "tuning-up" },
         count = 1,
         energy_required = 1,
-        ingredients = { { { "electromagnetic-coil", 1 }, { "gold-wire", 1 } }, { { "gold-wire", 3 } } }
+        ingredients = { { { "electromagnetic-coil", 1 }, { "copper-cable", 2 } }, { { "plastic-bar", 1 }, { "copper-cable", 3 } } },
+        scrap_types = { { "electronic-scrap", 1 }, {"electrical-scrap", 3} },
+        scrap_yield = 2
     }
 
     tune_up_data.recipes["hydrocoptic-marzelvane"] = {
         categories = { "tuning-up" },
         count = 1,
         energy_required = 1,
-        ingredients = { { { "semiboloid-stator", 4 }, { mods["maraxsis"] and "maraxsis-glass-panes" or "fluoroketone-cold", mods["maraxsis"] and 1 or 20 }, { mods["BrassTacksMk2"] and "bearing" or "iron-gear-wheel", 2 } } }
+        ingredients = { { { "semiboloid-stator", 10 }, { mods["maraxsis"] and "maraxsis-glass-panes" or "fluoroketone-cold", mods["maraxsis"] and 1 or 20 }, { "lithium-plate", 3 } } },
+        scrap_types = { { "robotic-scrap", 1 }, {"mechanical-scrap", 2}, {"plumbing-scrap", 1} },
+        scrap_yield = 10
     }
 end
 
