@@ -25,6 +25,9 @@ if misc.difficulty > 1 then
     rm.AddIngredient("flying-robot-frame", "transceiver", 1)
     rm.RemoveIngredient("flying-robot-frame", "electronic-circuit", 99999)
     --not a replace - if BrassTacks exists, circuits will have been replaced w/ gyro
+    if not data.raw.item["gyro"] then
+        rm.AddIngredient("flying-robot-frame", "stepper-motor", 1)
+    end
 
     tm.AddUnlock("advanced-circuit", "heavy-cable")
 
@@ -148,10 +151,10 @@ if misc.difficulty > 1 then
     rm.ReplaceIngredientProportional("buffer-chest", "electronic-circuit", "transceiver", 0.33)
     rm.ReplaceIngredientProportional("requester-chest", "electronic-circuit", "transceiver", 0.33)
 
-    if not mods["BrassTacksMk2"] then
+    if not mods["IfNickelMk2"] then
         rm.AddIngredient("logistic-robot", "stepper-motor", 2)
         rm.AddIngredient("construction-robot", "stepper-motor", 2)
-    end    
+    end
     tm.AddUnlock("ll-quantum-resource-processing", "astral-acid-recovery")
 end
 
@@ -165,6 +168,10 @@ end
 
 if misc.difficulty > 1 and not mods["BrassTacksMk2"] then
     rm.AddIngredient("assembling-machine-3", "stepper-motor", misc.difficulty == 3 and 16 or 8)
+end
+
+if misc.difficulty > 1 and not mods["IfNickel"] then
+    rm.ReplaceIngredientProportional("recycler", "iron-gear-wheel", "stepper-motor", 0.5, 20)
 end
 
 if misc.difficulty > 1 and rm.GetIngredientCount("centrifuge", "electric-engine-unit") == 0 then
@@ -264,7 +271,14 @@ end
 --TURRETS
 if misc.difficulty > 1 then
     if not mods["IfNickelMk2"] then
-        rm.AddIngredient("laser-turret", "stepper-motor", 1)
+        rm.AddIngredient("laser-turret", "stepper-motor", 4)
+    end
+    if not mods["LasingAroundMk2"] then
+        if mods["BrassTacksMk2"] then
+            rm.ReplaceIngredientProportional("laser-turret", "electronic-circuit", "heavy-cable", 0.5)
+        else
+            rm.ReplaceIngredientProportional("laser-turret", "electronic-circuit", "heavy-cable", 0.5, 10)
+        end
     end
 end
 
@@ -286,4 +300,11 @@ if tune_up_data then
     tune_up_data.ReplaceIngredientProportional("nickel-ore", "sulfuric-acid", "nitric-acid", 1)
     tune_up_data.ReplaceIngredientProportional("copper-plate", "sulfuric-acid", "nitric-acid", 1)
     tune_up_data.ReplaceIngredientProportional("nickel-plate", "sulfuric-acid", "nitric-acid", 1)
+
+    if mods["tuner-upper"] and settings.startup["tuner-upper-byproducts"].value == "Standardised" then
+        rm.AddProduct("electronic-scrap-recycling", { type = "item", name = "integrated-circuit", amount = 1, independent_probability = 0.05 })
+        tune_up_data.scrap_values["electronic-scrap"] = tune_up_data.scrap_values["electronic-scrap"] + 0.2
+
+        rm.AddProduct("electrical-scrap-recycling", { type = "item", name = "gold-powder", amount = 1, independent_probability = 0.01 })
+    end
 end
