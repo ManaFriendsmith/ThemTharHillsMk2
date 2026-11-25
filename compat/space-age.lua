@@ -20,7 +20,7 @@ end
 --VULCANUS
 
 if mods["BrimStuffMk2"] then
-    rm.ReplaceIngredientProportional("foundry", "electronic-circuit", "heavy-cable")    
+    rm.ReplaceIngredientProportional("foundry", "electronic-circuit", "heavy-cable")
 end
 
 if mods["IfNickelMk2"] then
@@ -134,5 +134,13 @@ if misc.difficulty == 3 then
 
     if settings.startup["planetfall-postgame-logistics"].value then
         rm.AddIngredient("extradimensional-cargo-bay", "hydrocoptic-marzelvane", 20)
+    end
+end
+
+--TUNER
+if tune_up_data then
+    if not data.raw.item["tracker"] then
+        tune_up_data.AddIngredient("dormant-newtronic-chip", "transceiver", 5)
+        tune_up_data.AddIngredient("pulsing-newtronic-chip", "transceiver", 5)
     end
 end
