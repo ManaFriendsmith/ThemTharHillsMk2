@@ -43,7 +43,7 @@ if mods["deadlock-beltboxes-loaders"] then
         rm.RemoveIngredient("express-transport-belt-beltbox", "iron-gear-wheel", 99999)
     end
 
-    if misc.difficulty == 1 or not ((mods["LasingAroundmk2"] and not mods["space-age"]) or (mods["BrassTacksMk2"] and misc.difficulty > 1)) then
+    if misc.difficulty == 1 or not ((mods["LasingAroundMk2"] and not mods["space-age"]) or (mods["BrassTacksMk2"] and misc.difficulty > 1)) then
         rm.AddIngredient("express-transport-belt-beltbox", "integrated-circuit", 10)
     end
 end
